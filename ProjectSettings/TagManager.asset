@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Citizen
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,13 +15,13 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - BG
+  - Reference
+  - Island
+  - Sea
+  - Coast
+  - City
+  - Battlefield
   - 
   - 
   - 
@@ -38,6 +40,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Reference
+    uniqueID: 1986279141
+    locked: 0
+  - name: Background
+    uniqueID: 2668653239
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: City
+    uniqueID: 1132303723
+    locked: 0
+  - name: Combat
+    uniqueID: 3356904433
+    locked: 0
+  - name: Coast
+    uniqueID: 798206379
+    locked: 0
+  - name: Foreground
+    uniqueID: 2360610847
     locked: 0

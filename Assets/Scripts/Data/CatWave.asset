@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e844202f1cb78704bb48cbdd9bf9dd8c, type: 3}
+  m_Name: CatWave
+  m_EditorClassIdentifier: 
+  Waves:
+  - PrefabsToSpawn:
+    - {fileID: 1973762371951732, guid: e22aa4cb5a5631b4ebb9fc3964e73759, type: 2}
+    - {fileID: 1808097467360230, guid: 1c147f8b56aab0540b9d86c29d9a9cc1, type: 2}
+    - {fileID: 1868458759882670, guid: 5906b4d4ec78c834eb63cdf255254ba5, type: 2}
+    - {fileID: 1192590194922724, guid: 127783837c656234682368f6973a3785, type: 2}
+  StartDelay: 0
+  DelayBetweenWaves: 0

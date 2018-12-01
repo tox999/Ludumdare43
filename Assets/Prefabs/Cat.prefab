@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212146669552540612}
   - component: {fileID: 58993147086332078}
   - component: {fileID: 50532042213282794}
-  m_Layer: 12
+  m_Layer: 18
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4542924098748226}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,8 +141,8 @@ SpriteRenderer:
   m_SortingLayerID: -870103161
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 08d34687e7fbfc442a17454ca1d033d9, type: 3}
-  m_Color: {r: 1, g: 0.6687182, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8b401bfb7af1ce7498e161cfafd97eef, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -6,8 +6,8 @@ using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
-
     [SerializeField]
+    WavesObject WavesObject;
     List<GameObject> spawningPoolOriginals;
 
     [SerializeField]
@@ -38,26 +38,25 @@ public class Spawner : MonoBehaviour
     float spawnWait;
 
     [SerializeField]
-    float startWait;
-
-    [SerializeField]
-    float waveWait;
-
-    [SerializeField]
-    int maxWaves = 1;
-
-    [SerializeField]
     bool infiniteSpawning = false;
 
+    int maxWaves;
+    float startWait;
+    float waveWait;
     int passedWaves = 0;
     Coroutine spawningCoroutine;
+    List<Wave> waves;
 
     void Awake()
     {
         baseSpawnlingName = baseSpawnlingName ?? "Spawn";
         Spawns = new List<GameObject>();
-        spawningPoolOriginals = spawningPoolOriginals ?? new List<GameObject>();
+        
         spawnParent = spawnParent ?? gameObject;
+        waves = WavesObject.Waves;
+        maxWaves = waves.Count;
+        startWait = WavesObject.StartDelay;
+        waveWait = WavesObject.DelayBetweenWaves;
     }
 
     // Use this for initialization
@@ -75,10 +74,13 @@ public class Spawner : MonoBehaviour
 
     GameObject Spawn(GameObject original)
     {
-        Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+        var x = Random.Range(-spawnValues.x, spawnValues.x) + spawnParent.transform.position.x;
+        var y = Random.Range(-spawnValues.y, spawnValues.y) + spawnParent.transform.position.y;
+        Vector3 spawnPosition = new Vector3(x, y, spawnValues.z);
         Quaternion spawnRotation = Quaternion.identity;
-      
+
         GameObject SpawnInstance = Instantiate(original, spawnPosition, spawnRotation, spawnParent.transform);
+        //GameObject SpawnInstance = Instantiate(original, spawnParent.transform);
         SpawnInstance.name = baseSpawnlingName + (Spawns.Count).ToString();
         Spawns.Add(SpawnInstance);
         return SpawnInstance;
@@ -92,6 +94,7 @@ public class Spawner : MonoBehaviour
         {
             for (int i = 0; i < waveSize; i++)
             {
+                spawningPoolOriginals = waves[i].PrefabsToSpawn;
                 if (oneFromPoolRandom)
                 {
                     var original = spawningPoolOriginals[Random.Range(0, spawningPoolOriginals.Count)];             

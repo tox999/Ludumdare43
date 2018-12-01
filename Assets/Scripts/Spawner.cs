@@ -25,8 +25,6 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     float spawnRandomRadius;
 
-    [SerializeField]
-    float spawningDelay = 1f;
 
     [HideInInspector]
     public List<GameObject> Spawns;

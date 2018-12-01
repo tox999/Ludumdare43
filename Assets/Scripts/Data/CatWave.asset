@@ -14,8 +14,8 @@ MonoBehaviour:
   Waves:
   - PrefabsToSpawn:
     - {fileID: 1973762371951732, guid: e22aa4cb5a5631b4ebb9fc3964e73759, type: 2}
+    - {fileID: 1192590194922724, guid: 127783837c656234682368f6973a3785, type: 2}
     - {fileID: 1808097467360230, guid: 1c147f8b56aab0540b9d86c29d9a9cc1, type: 2}
     - {fileID: 1868458759882670, guid: 5906b4d4ec78c834eb63cdf255254ba5, type: 2}
-    - {fileID: 1192590194922724, guid: 127783837c656234682368f6973a3785, type: 2}
   StartDelay: 0
   DelayBetweenWaves: 0

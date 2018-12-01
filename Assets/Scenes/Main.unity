@@ -224,6 +224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 123927945}
+  - component: {fileID: 123927946}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -244,6 +245,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &123927946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 123927944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca997172fb2b284da0a8c6d96b79ab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsPath: Assets/Data/Settings
 --- !u!1 &177494614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,6 +1164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1502975217}
   - component: {fileID: 1502975218}
+  - component: {fileID: 1502975219}
   m_Layer: 11
   m_Name: Surface
   m_TagString: Untagged
@@ -1196,6 +1210,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 26.539597, y: 6.0754805}
   m_EdgeRadius: 0
+--- !u!114 &1502975219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1502975216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1215fd7e5c7c2834ba401b7b3a817faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catLayerMask:
+    serializedVersion: 2
+    m_Bits: 262144
 --- !u!1 &1547777748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,7 +1294,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1591539429}
-  - component: {fileID: 1591539431}
   - component: {fileID: 1591539430}
   m_Layer: 0
   m_Name: Sea
@@ -1306,20 +1333,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catsInSea: []
---- !u!114 &1591539431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1591539428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1215fd7e5c7c2834ba401b7b3a817faf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  catLayerMask:
-    serializedVersion: 2
-    m_Bits: 262144
 --- !u!1 &1708764224
 GameObject:
   m_ObjectHideFlags: 0

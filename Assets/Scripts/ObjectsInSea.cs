@@ -12,6 +12,9 @@ public class ObjectsInSea : MonoBehaviour
     public void AddCatToSea(GameObject cat)
     {
         catsInSea.Add(cat);
-        newCatInSea();
+        if (newCatInSea != null)
+        {
+            newCatInSea();
+        }
     }
 }

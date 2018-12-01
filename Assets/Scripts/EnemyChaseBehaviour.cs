@@ -13,10 +13,12 @@ public class EnemyChaseBehaviour : MonoBehaviour
     private ObjectsInSea objectsInSea;
     GameObject nearestCat;
 
+
     private void Awake()
     {
         nearestCat = new GameObject();
-        objectsInSea = GetComponentInParent<ObjectsInSea>();
+        GameObject fishSpawner = gameObject.transform.parent.gameObject;
+        objectsInSea = fishSpawner.GetComponentInParent<ObjectsInSea>();
     }
 
     private void OnEnable()
@@ -103,8 +105,6 @@ public class EnemyChaseBehaviour : MonoBehaviour
             {
                 GetNearestCat();
             }
-
-
         }
         ChaseTarget();
     }

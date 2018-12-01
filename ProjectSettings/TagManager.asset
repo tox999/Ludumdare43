@@ -22,7 +22,7 @@ TagManager:
   - Coast
   - City
   - Battlefield
-  - 
+  - SeaFloor
   - 
   - 
   - 
@@ -60,4 +60,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 2360610847
+    locked: 0
+  - name: SeaFloor
+    uniqueID: 1464723163
     locked: 0

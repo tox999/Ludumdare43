@@ -11,6 +11,9 @@ public class Spawner : MonoBehaviour
     List<GameObject> spawningPoolOriginals;
 
     [SerializeField]
+    string baseSpawnlingName;
+
+    [SerializeField]
     bool oneFromPoolRandom = true;
 
     [SerializeField]
@@ -41,10 +44,17 @@ public class Spawner : MonoBehaviour
     float waveWait;
 
     [SerializeField]
-    int maxWaves = -1;
+    int maxWaves = 1;
+
+    [SerializeField]
+    bool infiniteSpawning = false;
+
+    int passedWaves = 0;
+    Coroutine spawningCoroutine;
 
     void Awake()
     {
+        baseSpawnlingName = baseSpawnlingName ?? "Spawn";
         Spawns = new List<GameObject>();
         spawningPoolOriginals = spawningPoolOriginals ?? new List<GameObject>();
         spawnParent = spawnParent ?? gameObject;
@@ -53,14 +63,14 @@ public class Spawner : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        StartCoroutine(SpawnWaves());
+        spawningCoroutine = StartCoroutine(SpawnWaves());
     }
 
     // Update is called once per frame
     void Update()
-    {   
-
-
+    {
+        if (passedWaves >= maxWaves && spawningCoroutine != null && !infiniteSpawning)
+            StopCoroutine(spawningCoroutine);
     }
 
     GameObject Spawn(GameObject original)
@@ -69,7 +79,7 @@ public class Spawner : MonoBehaviour
         Quaternion spawnRotation = Quaternion.identity;
       
         GameObject SpawnInstance = Instantiate(original, spawnPosition, spawnRotation, spawnParent.transform);
-
+        SpawnInstance.name = baseSpawnlingName + (Spawns.Count).ToString();
         Spawns.Add(SpawnInstance);
         return SpawnInstance;
     }
@@ -80,7 +90,6 @@ public class Spawner : MonoBehaviour
         yield return new WaitForSeconds(startWait);
         while (true)
         {
-            
             for (int i = 0; i < waveSize; i++)
             {
                 if (oneFromPoolRandom)
@@ -97,12 +106,10 @@ public class Spawner : MonoBehaviour
                         yield return new WaitForSeconds(spawnWait);
                     }
                 }
-                
-                
             }
 
+            passedWaves++;
             yield return new WaitForSeconds(waveWait);
         }
     }
-
 }

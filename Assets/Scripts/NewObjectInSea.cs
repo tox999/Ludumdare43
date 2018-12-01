@@ -18,4 +18,11 @@ public class NewObjectInSea : MonoBehaviour
         GameObject newCatInSea = collision.gameObject;
         objectsInSea.AddCatToSea(newCatInSea);
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        GameObject catOutOfSea = collision.gameObject;
+        objectsInSea.RemoveCatFromSea(catOutOfSea);
+    }
+
 }

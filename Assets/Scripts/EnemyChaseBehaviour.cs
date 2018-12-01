@@ -9,7 +9,7 @@ public class EnemyChaseBehaviour : MonoBehaviour
     [SerializeField] LayerMask legsLayerMask;
     [SerializeField] float chaseDistanceLimit = 0.5f;
 
-    private Vector3 currentTarget;
+    public Vector3 currentTarget;
     private ObjectsInSea objectsInSea;
     GameObject nearestCat;
 
@@ -24,11 +24,12 @@ public class EnemyChaseBehaviour : MonoBehaviour
     private void OnEnable()
     {
         objectsInSea.newCatInSea += GetNearestCat;
+        objectsInSea.catOutOfSea += InitializeFish;
     }
 
     void Start()
     {
-        GetNearestLeg();
+        InitializeFish();
     }
 
     private void GetNearestLeg()
@@ -40,7 +41,7 @@ public class EnemyChaseBehaviour : MonoBehaviour
         
         if (leftHit.collider == null && rightHit.collider == null)
         {
-            Debug.LogError("There are no legs!!!");
+            Debug.LogError("There are no legs to eat!!!");
         }
         else if (leftHit.collider != null && rightHit.collider != null)
         {
@@ -92,9 +93,23 @@ public class EnemyChaseBehaviour : MonoBehaviour
             }
         }
     }
+
+    public void InitializeFish()
+    {
+        if (objectsInSea.catsInSea.Count > 0)
+        {
+            GetNearestCat();
+        }
+        else
+        {
+            GetNearestLeg();
+        }
+    }
     
     void Update()
     {
+        ChaseTarget();
+
         if (objectsInSea.catsInSea.Count > 0)
         {
             if (nearestCat != null)
@@ -106,12 +121,11 @@ public class EnemyChaseBehaviour : MonoBehaviour
                 GetNearestCat();
             }
         }
-        ChaseTarget();
     }
 
     private void OnDisable()
     {
         objectsInSea.newCatInSea -= GetNearestCat;
+        objectsInSea.catOutOfSea -= InitializeFish;
     }
-
 }

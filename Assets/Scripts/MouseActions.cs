@@ -6,7 +6,7 @@ using UnityEditor;
 public class MouseActions : MonoBehaviour {
 
     [SerializeField]
-    string settingsPath = "Assets/Data/Settings";
+    string settingsPath = "Assets/Data/Settings.asset";
     Settings settings;
 
     GameObject attachedObject;
@@ -17,8 +17,8 @@ public class MouseActions : MonoBehaviour {
     // Use this for initialization
     void Awake ()
     {
-        settings = AssetDatabase.LoadAssetAtPath<Settings>(settingsPath);
-        Action1 = settings.Action1;
+        //settings = AssetDatabase.LoadAssetAtPath<Settings>(settingsPath);
+        //Action1 = settings.Action1;
     }
 
     // Update is called once per frame

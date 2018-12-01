@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsPath: Assets/Data/Settings
+  Action1: 0
 --- !u!1 &177494614
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +506,6 @@ MonoBehaviour:
   waveSize: 1
   spawnParent: {fileID: 517576473}
   spawnRandomRadius: 0
-  spawningDelay: 1
   Spawns: []
   spawnValues: {x: 1, y: 1, z: 0}
   spawnWait: 3
@@ -556,7 +556,6 @@ MonoBehaviour:
   waveSize: 1
   spawnParent: {fileID: 561188306}
   spawnRandomRadius: 0
-  spawningDelay: 1
   Spawns: []
   spawnValues: {x: 1, y: 1, z: 0}
   spawnWait: 3
@@ -749,11 +748,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1464723163
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -906,11 +905,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WavesObject: {fileID: 11400000, guid: a6f4ff652626e0d45b84761c5a1e1d54, type: 2}
   baseSpawnlingName: CatCitizen
-  oneFromPoolRandom: 1
+  oneFromPoolRandom: 0
   waveSize: 1
   spawnParent: {fileID: 1666965}
   spawnRandomRadius: 0
-  spawningDelay: 0
   Spawns:
   - {fileID: 0}
   - {fileID: 0}
@@ -1479,11 +1477,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1464723163
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

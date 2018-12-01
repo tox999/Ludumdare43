@@ -7,10 +7,11 @@ public class EnemyChaseBehaviour : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
     [SerializeField] LayerMask legsLayerMask;
-    [SerializeField] float chaseDistanceLimit = 0.5f;
+    [SerializeField] float chaseDistanceLimit = 0.1f;
 
-    public Vector3 currentTarget;
+    private Vector3 currentTarget;
     private ObjectsInSea objectsInSea;
+    private float circleCastRadius = 1.5f;
     GameObject nearestCat;
 
 
@@ -35,8 +36,8 @@ public class EnemyChaseBehaviour : MonoBehaviour
     private void GetNearestLeg()
     {
         RaycastHit2D nearestLeg = new RaycastHit2D();
-        RaycastHit2D leftHit = Physics2D.Raycast(transform.position, Vector3.left, Mathf.Infinity, legsLayerMask.value);
-        RaycastHit2D rightHit = Physics2D.Raycast(transform.position, Vector3.right, Mathf.Infinity, legsLayerMask.value);
+        RaycastHit2D leftHit = Physics2D.CircleCast(transform.position, circleCastRadius, Vector3.left, Mathf.Infinity, legsLayerMask.value);
+        RaycastHit2D rightHit = Physics2D.CircleCast(transform.position, circleCastRadius, Vector3.right, Mathf.Infinity, legsLayerMask.value);
 
         
         if (leftHit.collider == null && rightHit.collider == null)

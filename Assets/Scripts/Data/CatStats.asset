@@ -11,11 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4800aba411b76ca418e0df4bc74a563b, type: 3}
   m_Name: CatStats
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 10
   damage: 25
   attackSpeedMin: 0.3
   attackSpeedMax: 2
   attackRange: 20
-  mass: 0
   projectileSpeedMin: 5
   projectileSpeedMax: 10
+  weight: 10
+  maxWeight: 0

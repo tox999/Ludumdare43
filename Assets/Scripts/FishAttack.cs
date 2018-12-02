@@ -1,17 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FishAttack : MonoBehaviour {
 
-    //[SerializeField] float enemyDamage = 10f;
-    //[SerializeField] float attackSpeed = 3f;
-    [SerializeField] float time = 3f;
+    [SerializeField] Stats fishStats;
+
     [SerializeField] int catLayer = 18;
     [SerializeField] int legLayer = 16;
 
     GameObject attactedObject;
     ObjectsInSea objectsInSea;
+    bool isAttacking = false;
 
     private void Start()
     {
@@ -19,21 +20,41 @@ public class FishAttack : MonoBehaviour {
         GameObject fishSpawner = fish.transform.parent.gameObject;
         objectsInSea = fishSpawner.GetComponentInParent<ObjectsInSea>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.layer == catLayer)
         {
             attactedObject = collision.gameObject;
-            StartCoroutine(SlowDeath());
+            if (!isAttacking)
+            {
+                isAttacking = true;
+                StartCoroutine(AttackCat());
+            }
         }
     }
 
-    IEnumerator SlowDeath()
+    IEnumerator AttackCat()
     {
-        yield return new WaitForSeconds(time);
         if (attactedObject != null)
         {
-            objectsInSea.catsInSea.Remove(attactedObject);
+            CatAttack cat = attactedObject.GetComponent<CatAttack>();
+            cat.currentHP -= fishStats.damage;
+            if (cat.currentHP <= 0)
+            {
+                isAttacking = false;
+                CatDeath();
+            }
+        }
+        yield return new WaitForSeconds(fishStats.attackSpeed);
+        isAttacking = false;
+    }
+
+    private void CatDeath()
+    {
+        if (attactedObject != null)
+        {
+            objectsInSea.RemoveCatFromSea(attactedObject);
             Destroy(attactedObject.transform.parent.gameObject);
         }
         GetComponentInParent<EnemyChaseBehaviour>().InitializeFish();

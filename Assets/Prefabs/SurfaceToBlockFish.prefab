@@ -9,47 +9,59 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1033461093545054}
+  m_RootGameObject: {fileID: 1983297986788052}
   m_IsPrefabAsset: 1
---- !u!1 &1033461093545054
+--- !u!1 &1983297986788052
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4775389631840714}
-  - component: {fileID: 114665000314451752}
-  m_Layer: 0
-  m_Name: GameController
+  - component: {fileID: 4038517923953176}
+  - component: {fileID: 61625556955822716}
+  m_Layer: 19
+  m_Name: SurfaceToBlockFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4775389631840714
+--- !u!4 &4038517923953176
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1033461093545054}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2199755, y: 0.1343402, z: 0.046875}
+  m_GameObject: {fileID: 1983297986788052}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114665000314451752
-MonoBehaviour:
+--- !u!61 &61625556955822716
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1033461093545054}
+  m_GameObject: {fileID: 1983297986788052}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ca997172fb2b284da0a8c6d96b79ab7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settingsPath: Assets/Data/Settings
-  Action1: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.14921284, y: -1.5808768}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 28.944426, y: 0.27811337}
+  m_EdgeRadius: 0

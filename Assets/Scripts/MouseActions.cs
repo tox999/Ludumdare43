@@ -41,8 +41,6 @@ public class MouseActions : MonoBehaviour {
         this.attachedObject = attachedObject;
         tongue.SetActive(true);
         mimics.ChangeFace("lick");
-
-
     }
 
     public void Drop(GameObject attachedObject)

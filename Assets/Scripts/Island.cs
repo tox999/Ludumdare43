@@ -25,8 +25,9 @@ public class Island : MonoBehaviour
     {
         if (currentHP <= (currentHP * 0.2f))
             mimics.ChangeFace("tired");
-        else if (currentHP > (currentHP * 0.2f))
-            mimics.ChangeFace("default");
+        else if (currentHP <= (currentHP * 0.5f))
+            mimics.ChangeFace("shocked");
+
         CheckMaxWeight();
     }
 

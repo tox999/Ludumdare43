@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58845675691013592}
   - component: {fileID: 50318063697703274}
   - component: {fileID: 114351298393382916}
+  - component: {fileID: 114180130564283150}
   m_Layer: 18
   m_Name: Sprite
   m_TagString: Untagged
@@ -107,6 +108,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.01}
   serializedVersion: 2
   m_Radius: 0.46
+--- !u!114 &114180130564283150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1299155818948022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee62cc4f75981a47aa7a32b11efab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catStats: {fileID: 11400000, guid: a4752d86f9674104b8a97e5ec5462047, type: 2}
+  currentHP: 0
 --- !u!114 &114351298393382916
 MonoBehaviour:
   m_ObjectHideFlags: 1

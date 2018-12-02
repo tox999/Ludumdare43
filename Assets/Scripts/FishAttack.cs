@@ -9,6 +9,7 @@ public class FishAttack : MonoBehaviour {
 
     [SerializeField] int catLayer = 18;
     [SerializeField] int legLayer = 16;
+    public float currentHP;
 
     GameObject attactedObject;
     ObjectsInSea objectsInSea;
@@ -19,6 +20,7 @@ public class FishAttack : MonoBehaviour {
     {
         objectsInSea = FindObjectOfType<ObjectsInSea>();
         island = FindObjectOfType<Island>();
+        currentHP = fishStats.HP;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -59,7 +61,7 @@ public class FishAttack : MonoBehaviour {
                 StopCoroutine(AttackCat());
             }
         }
-        yield return new WaitForSeconds(fishStats.attackSpeed);
+        yield return new WaitForSeconds(fishStats.attackSpeedMin);
         isAttacking = false;
     }
 
@@ -75,7 +77,7 @@ public class FishAttack : MonoBehaviour {
                 StopCoroutine(AttackIsland());
             }
         }
-        yield return new WaitForSeconds(fishStats.attackSpeed);
+        yield return new WaitForSeconds(fishStats.attackSpeedMin);
         isAttacking = false;
     }
     

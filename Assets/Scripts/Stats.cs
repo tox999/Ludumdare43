@@ -12,4 +12,8 @@ public class Stats : ScriptableObject
     public float attackSpeed;
 
     public float attackRange;
+
+    public float mass;
+
+
 }

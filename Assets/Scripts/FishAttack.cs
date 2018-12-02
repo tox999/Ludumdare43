@@ -12,13 +12,13 @@ public class FishAttack : MonoBehaviour {
 
     GameObject attactedObject;
     ObjectsInSea objectsInSea;
+    Island island;
     bool isAttacking = false;
 
-    private void Start()
+    private void Awake()
     {
-        GameObject fish = gameObject.transform.parent.gameObject;
-        GameObject fishSpawner = fish.transform.parent.gameObject;
-        objectsInSea = fishSpawner.GetComponentInParent<ObjectsInSea>();
+        objectsInSea = FindObjectOfType<ObjectsInSea>();
+        island = FindObjectOfType<Island>();
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -33,7 +33,19 @@ public class FishAttack : MonoBehaviour {
             }
         }
     }
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == legLayer)
+        {
+            attactedObject = collision.gameObject;
+            if (!isAttacking)
+            {
+                isAttacking = true;
+                StartCoroutine(AttackIsland());
+            }
+        }
+    }
+            
     IEnumerator AttackCat()
     {
         if (attactedObject != null)
@@ -44,11 +56,29 @@ public class FishAttack : MonoBehaviour {
             {
                 isAttacking = false;
                 CatDeath();
+                StopCoroutine(AttackCat());
             }
         }
         yield return new WaitForSeconds(fishStats.attackSpeed);
         isAttacking = false;
     }
+
+    IEnumerator AttackIsland()
+    {
+        if (attactedObject != null)
+        {
+            island.currentHP -= fishStats.damage;
+            if (island.currentHP <= 0)
+            {
+                isAttacking = false;
+                island.IslandDeath();
+                StopCoroutine(AttackIsland());
+            }
+        }
+        yield return new WaitForSeconds(fishStats.attackSpeed);
+        isAttacking = false;
+    }
+    
 
     private void CatDeath()
     {

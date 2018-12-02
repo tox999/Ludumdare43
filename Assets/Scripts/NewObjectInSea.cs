@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NewObjectInSea : MonoBehaviour
 {
-    [SerializeField] LayerMask catLayerMask;
+    [SerializeField] int catLayer = 18;
 
     private ObjectsInSea objectsInSea;
 
@@ -15,14 +15,20 @@ public class NewObjectInSea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject newCatInSea = collision.gameObject;
-        objectsInSea.AddCatToSea(newCatInSea);
+        if (collision.gameObject.layer == catLayer)
+        {
+            GameObject newCatInSea = collision.gameObject;
+            objectsInSea.AddCatToSea(newCatInSea);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        GameObject catOutOfSea = collision.gameObject;
-        objectsInSea.RemoveCatFromSea(catOutOfSea);
+        if (collision.gameObject.layer == catLayer)
+        {
+            GameObject catOutOfSea = collision.gameObject;
+            objectsInSea.RemoveCatFromSea(catOutOfSea);
+        }
     }
 
 }

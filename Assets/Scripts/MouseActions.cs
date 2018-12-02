@@ -9,7 +9,8 @@ public class MouseActions : MonoBehaviour {
     string settingsPath = "Assets/Data/Settings.asset";
     [SerializeField]
     GameObject tongue;
-
+    [SerializeField]
+    Mimics mimics;
     Settings settings;
 
     GameObject attachedObject;
@@ -39,6 +40,9 @@ public class MouseActions : MonoBehaviour {
     {
         this.attachedObject = attachedObject;
         tongue.SetActive(true);
+        mimics.ChangeFace("lick");
+
+
     }
 
     public void Drop(GameObject attachedObject)
@@ -47,6 +51,7 @@ public class MouseActions : MonoBehaviour {
         Debug.Log("DropFromHand");
         this.attachedObject = null;
         tongue.SetActive(false);
+        mimics.ChangeFace("default");
     }
 
     public void ThrowAttached(GameObject attachedObject)
@@ -55,6 +60,7 @@ public class MouseActions : MonoBehaviour {
 
         this.attachedObject = null;
         tongue.SetActive(false);
+        mimics.ChangeFace("default");
     }
 
     public void EatAttached(GameObject attachedObject)

@@ -10,19 +10,31 @@ public class Mimics : MonoBehaviour {
 
     public string CurrentFace = "Default";
     SpriteRenderer Face;
-
+ 
 	// Use this for initialization
 	void Awake ()
     {
-	      Face = GetComponent<SpriteRenderer>();  	
-	}
+        Face = GetComponent<SpriteRenderer>();
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        
-        //Face.sprite = ;
+        //ChangeFace(CurrentFace);
 	}
 
+    public void ChangeFace(string newFace)
+    {
+        
+            var newSprite = Faces.GetSprite(newFace);
+            if (newSprite == null)
+            {
+                Debug.LogError("New sprite is null; probabbly invalid face name.");
+                return;
+            }
 
+            Face.sprite = newSprite ;
+          
+    }
 }

@@ -69,8 +69,8 @@ public class Game : MonoBehaviour {
     public void RetryGame()
     {
         Scene scene = SceneManager.GetActiveScene();
+        //ContinueGame();
         SceneManager.LoadScene(scene.name);
-        ContinueGame();
     }
     public void ContinueGame()
     {

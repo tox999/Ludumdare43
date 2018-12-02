@@ -89,31 +89,22 @@ public class LookAtCursor : MonoBehaviour {
 
     void DrawLine()
     {
-        int lengthOfLineRenderer = Mathf.RoundToInt(Vector3.Distance(tongueRoot.position, mousePosition));
-        lineRenderer.positionCount = lengthOfLineRenderer;
+        // int lengthOfLineRenderer = Mathf.RoundToInt(Vector3.Distance(tongueRoot.position, mousePosition));
+        // lineRenderer.positionCount = lengthOfLineRenderer;
+        lineRenderer.positionCount = 2;
 
-        var t = Time.time;
+        var t = Time.deltaTime;
         Vector3 firstVertexPos = tongueRoot.position;
         Vector3 lastVertexPos = mousePosition;
-        for (int i = 0; i < lengthOfLineRenderer; i++)
-        {
-            float x = i * Mathf.Lerp(firstVertexPos.x, lastVertexPos.x, t);
-            //float y = Mathf.Sin(i + t);
-            //float y = Mathf.Sin(i * Mathf.Lerp(firstVertexPos.y, lastVertexPos.y, t) + t);
-            float y = Mathf.Sin(i * Mathf.Lerp(firstVertexPos.y, lastVertexPos.y, t));
+        Vector3.Lerp(firstVertexPos, lastVertexPos, t);
+        lineRenderer.SetPosition(0, firstVertexPos);
+        lineRenderer.SetPosition(1, lastVertexPos);
 
-            if (i < 10)
-            {
-                var tongueStart = new Vector3(firstVertexPos.x + i, y + i, 0.0f);
-                lineRenderer.SetPosition(i, tongueStart);
-            }
-            else if (i >= lengthOfLineRenderer-10)
-            {
-                var tongueEnd = new Vector3(firstVertexPos.x + i, y + i, 0.0f);
-                lineRenderer.SetPosition(i, tongueEnd);
-            }
+        //for (var i = 0; i < lineRenderer.positionCount; i++)
+        //{
+        //    lineRenderer.SetPosition(i, Vector3.Lerp(firstVertexPos, lastVertexPos, t));
+        //}
 
-            lineRenderer.SetPosition(i, new Vector3(x, y, 0.0f));
-        }
+
     }
 }

@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Name: CatStats
   m_EditorClassIdentifier: 
   HP: 100
-  damage: 30
-  attackSpeed: 1
-  attackRange: 0
+  damage: 25
+  attackSpeedMin: 0.3
+  attackSpeedMax: 2
+  attackRange: 20
+  mass: 0
+  projectileSpeedMin: 5
+  projectileSpeedMax: 10

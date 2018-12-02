@@ -121,6 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catStats: {fileID: 11400000, guid: a4752d86f9674104b8a97e5ec5462047, type: 2}
   currentHP: 0
+  canAttack: 1
+  harpoon: {fileID: 1466922106968546, guid: 02899a2730f49874ba42ca0eaa881f56, type: 2}
 --- !u!114 &114987710218282234
 MonoBehaviour:
   m_ObjectHideFlags: 1

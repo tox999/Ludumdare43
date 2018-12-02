@@ -11,7 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4800aba411b76ca418e0df4bc74a563b, type: 3}
   m_Name: FishStats
   m_EditorClassIdentifier: 
-  HP: 100
-  damage: 10
-  attackSpeed: 2
+  HP: 50
+  damage: 5
+  attackSpeedMin: 1
+  attackSpeedMax: 2
   attackRange: 0
+  mass: 0
+  projectileSpeedMin: 0
+  projectileSpeedMax: 0

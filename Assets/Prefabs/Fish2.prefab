@@ -84,9 +84,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.81690097, y: -0.00999999}
+  m_Offset: {x: 0.4339218, y: -0.00999999}
   serializedVersion: 2
-  m_Radius: 0.48917508
+  m_Radius: 0.82352066
 --- !u!114 &114059828629701870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,6 +101,7 @@ MonoBehaviour:
   fishStats: {fileID: 11400000, guid: 87b1fca7e1df6b6438385fe89ec2f1ea, type: 2}
   catLayer: 18
   legLayer: 16
+  currentHP: 0
 --- !u!114 &114529624479512334
 MonoBehaviour:
   m_ObjectHideFlags: 1

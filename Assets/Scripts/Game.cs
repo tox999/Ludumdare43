@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class Game : MonoBehaviour {
 
     [SerializeField]
     GameObject menuPanel;
+    [SerializeField]
+    GameObject gameoverPanel;
 
     //Settings settings;
     //string settingsPath = "Assets/Data/Settings.asset";
@@ -58,9 +61,16 @@ public class Game : MonoBehaviour {
     }
     public void EndGame()
     {
+        menuPanel.SetActive(false);
         PauseGame();
-        // reload MainScene
-        //show gameover panel
+        gameoverPanel.SetActive(true);
+        // Play loose Sound
+    }
+    public void RetryGame()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+        ContinueGame();
     }
     public void ContinueGame()
     {

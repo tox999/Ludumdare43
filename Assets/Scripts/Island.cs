@@ -29,9 +29,6 @@ public class Island : MonoBehaviour
 
     public void IslandDeath()
     {
-        //Debug.Log("Island was eaten by fish! GAME OVER");
-        
-        game.PauseGame();
-        
+        game.EndGame();   
     }
 }

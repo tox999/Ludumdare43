@@ -41,8 +41,12 @@ public class Harpoon : MonoBehaviour
             if (hitFish != null)
             {
                 hitFish.GetComponent<FishAttack>().currentHP -= damage;
+                GameObject damageParticle = Instantiate(hitFish.GetComponent<FishAttack>().fishDamageParticle, hitFish.transform.position, Quaternion.identity);
+                Destroy(damageParticle, 3);
                 if (hitFish.GetComponent<FishAttack>().currentHP <= 0)
                 {
+                    GameObject deathParticle = Instantiate(hitFish.GetComponent<FishAttack>().fishDeathParticle, hitFish.transform.position, Quaternion.identity);
+                    Destroy(deathParticle, 3);
                     Destroy(hitFish.transform.parent.gameObject);
                 }
             }

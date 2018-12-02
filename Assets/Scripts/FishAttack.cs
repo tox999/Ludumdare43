@@ -6,6 +6,8 @@ using UnityEngine;
 public class FishAttack : MonoBehaviour {
 
     [SerializeField] Stats fishStats;
+    public GameObject fishDamageParticle;
+    public GameObject fishDeathParticle;
 
     [SerializeField] int catLayer = 18;
     [SerializeField] int legLayer = 16;

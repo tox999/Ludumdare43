@@ -11,11 +11,13 @@ public class Island : MonoBehaviour
     public float currentHP;
 
     Game game;
+    CountCatsOnIsland catsOnIsland;
 
     private void Awake()
     {
         currentHP = islandStats.HP;
         game = FindObjectOfType<Game>();
+        catsOnIsland = FindObjectOfType<CountCatsOnIsland>();
     }
     
     private void Update()
@@ -24,11 +26,21 @@ public class Island : MonoBehaviour
             mimics.ChangeFace("tired");
         else if (currentHP > (currentHP * 0.2f))
             mimics.ChangeFace("default");
-
+        CheckMaxWeight();
     }
 
     public void IslandDeath()
     {
         game.EndGame();   
     }
+
+    private void CheckMaxWeight()
+    {
+        if (catsOnIsland.weightOfAllCatsOnIsland >= islandStats.maxWeight)
+        {
+            Debug.Log("Island is overloaded with cats!!!");
+            game.EndGame();
+        }
+    }
+
 }

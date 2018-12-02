@@ -14,10 +14,12 @@ public class Stats : ScriptableObject
     public float attackSpeedMax;
 
     public float attackRange;
-
-    public float mass;
-
+        
     public float projectileSpeedMin;
 
     public float projectileSpeedMax;
+
+    public float weight;
+
+    public float maxWeight;
 }

@@ -7,6 +7,8 @@ public class CatAttack : MonoBehaviour
     public Stats catStats;
     public float currentHP;
     public bool canAttack = true;
+    private bool catOnIsland = true;
+    [SerializeField] int catsOnIslandLayer = 21;
     [SerializeField] GameObject harpoon;
 
     FishAttack nearestFish;
@@ -66,7 +68,27 @@ public class CatAttack : MonoBehaviour
         Vector3 throwTarget = (nearestFish.transform.position);
         newHarpoon.GetComponent<Harpoon>().SetTargetSpeedDamage(throwTarget, Random.Range(catStats.projectileSpeedMin, catStats.projectileSpeedMax), catStats.damage);
         yield return new WaitForSeconds(Random.Range(catStats.attackSpeedMin, catStats.attackSpeedMax));
-        canAttack = true;
+        if (catOnIsland)
+        {
+            canAttack = true;
+        }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == catsOnIslandLayer)
+        {
+            catOnIsland = false;
+            canAttack = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == catsOnIslandLayer)
+        {
+            catOnIsland = true;
+            canAttack = true;
+        }
+    }
 }

@@ -13,6 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 200
   damage: 0
-  attackSpeed: 0
+  attackSpeedMin: 0
+  attackSpeedMax: 0
   attackRange: 0
-  mass: 0
+  projectileSpeedMin: 0
+  projectileSpeedMax: 0
+  weight: 0
+  maxWeight: 100

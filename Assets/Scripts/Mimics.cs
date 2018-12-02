@@ -6,17 +6,23 @@ using UnityEngine;
 public class Mimics : MonoBehaviour {
 
     [SerializeField]
-    List<NamedSprite> Faces;
+    SpriteDict Faces;
+
+    public string CurrentFace = "Default";
+    SpriteRenderer Face;
 
 	// Use this for initialization
-	void Start ()
+	void Awake ()
     {
-		
+	      Face = GetComponent<SpriteRenderer>();  	
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
+        
+        //Face.sprite = ;
 	}
+
+
 }

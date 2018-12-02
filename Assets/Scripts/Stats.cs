@@ -9,7 +9,17 @@ public class Stats : ScriptableObject
 
     public float damage;
 
-    public float attackSpeed;
+    public float attackSpeedMin;
+
+    public float attackSpeedMax;
 
     public float attackRange;
+        
+    public float projectileSpeedMin;
+
+    public float projectileSpeedMax;
+
+    public float weight;
+
+    public float maxWeight;
 }

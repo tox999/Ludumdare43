@@ -133,6 +133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catStats: {fileID: 11400000, guid: a4752d86f9674104b8a97e5ec5462047, type: 2}
   currentHP: 0
+  canAttack: 1
+  harpoon: {fileID: 1466922106968546, guid: 02899a2730f49874ba42ca0eaa881f56, type: 2}
 --- !u!212 &212585856396393534
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -168,8 +170,8 @@ SpriteRenderer:
   m_SortingLayerID: -938062863
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3767cbe922426054cab5245ac95753e3, type: 3}
-  m_Color: {r: 0.98039216, g: 0.56065595, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ef0381d3b7a116d4991296c9b7962872, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

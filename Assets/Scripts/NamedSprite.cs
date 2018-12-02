@@ -7,6 +7,17 @@ using UnityEngine;
 public class SpriteDict : ScriptableObject
 {
     public List<NamedSprite> NamedSprites;
+
+    public Sprite GetSprite(string name)
+    {
+        foreach (var namedSprite in NamedSprites)
+        {
+            if (namedSprite.Name == name)
+                return namedSprite.Sprite;
+        }
+
+        return null;
+    }
 }
 
 [Serializable]

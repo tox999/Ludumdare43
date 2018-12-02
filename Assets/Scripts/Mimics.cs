@@ -6,17 +6,35 @@ using UnityEngine;
 public class Mimics : MonoBehaviour {
 
     [SerializeField]
-    List<NamedSprite> Faces;
+    SpriteDict Faces;
 
+    public string CurrentFace = "Default";
+    SpriteRenderer Face;
+ 
 	// Use this for initialization
-	void Start ()
+	void Awake ()
     {
-		
-	}
+        Face = GetComponent<SpriteRenderer>();
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
+        //ChangeFace(CurrentFace);
 	}
+
+    public void ChangeFace(string newFace)
+    {
+        
+            var newSprite = Faces.GetSprite(newFace);
+            if (newSprite == null)
+            {
+                Debug.LogError("New sprite is null; probabbly invalid face name.");
+                return;
+            }
+
+            Face.sprite = newSprite ;
+          
+    }
 }

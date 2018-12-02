@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class Game : MonoBehaviour {
 
     [SerializeField]
     GameObject menuPanel;
+    [SerializeField]
+    GameObject gameoverPanel;
 
     //Settings settings;
     //string settingsPath = "Assets/Data/Settings.asset";
@@ -55,6 +58,19 @@ public class Game : MonoBehaviour {
         Time.timeScale = 0;
         menuPanel.SetActive(true);
         //Disable scripts that still work while timescale is set to 0
+    }
+    public void EndGame()
+    {
+        menuPanel.SetActive(false);
+        PauseGame();
+        gameoverPanel.SetActive(true);
+        // Play loose Sound
+    }
+    public void RetryGame()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        //ContinueGame();
+        SceneManager.LoadScene(scene.name);
     }
     public void ContinueGame()
     {

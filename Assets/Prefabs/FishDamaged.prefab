@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4412528702520294}
   - component: {fileID: 198888276012004196}
   - component: {fileID: 199545144136469766}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: DamageStars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4621660208051132}
   - component: {fileID: 198474131396498394}
   - component: {fileID: 199198262809615314}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: FishDamaged
   m_TagString: Untagged
   m_Icon: {fileID: 0}

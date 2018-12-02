@@ -8,33 +8,32 @@ public class Mimics : MonoBehaviour {
     [SerializeField]
     SpriteDict Faces;
 
-    public string CurrentFace = "Default";
-    SpriteRenderer Face;
+    public string CurrentFace = "default";
+    SpriteRenderer spriteRenderer;
  
 	// Use this for initialization
 	void Awake ()
     {
-        Face = GetComponent<SpriteRenderer>();
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         //ChangeFace(CurrentFace);
-	}
+    }
 
     public void ChangeFace(string newFace)
     {
-        
-            var newSprite = Faces.GetSprite(newFace);
-            if (newSprite == null)
-            {
-                Debug.LogError("New sprite is null; probabbly invalid face name.");
-                return;
-            }
+        var newSprite = Faces.GetSprite(newFace);
+        if (newSprite == null)
+        {
+            Debug.LogError("New sprite is null; probabbly invalid face name.");
+            return;
+        }
 
-            Face.sprite = newSprite ;
-          
+        CurrentFace = newFace;
+        spriteRenderer.sprite = newSprite;
+            
     }
 }

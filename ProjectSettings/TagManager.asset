@@ -46,11 +46,26 @@ TagManager:
   - name: Background
     uniqueID: 2668653239
     locked: 0
+  - name: CloudsFG
+    uniqueID: 52944041
+    locked: 0
+  - name: SeaFloorBG
+    uniqueID: 275959227
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: City
     uniqueID: 1132303723
+    locked: 0
+  - name: Houses
+    uniqueID: 1860659549
+    locked: 0
+  - name: Face
+    uniqueID: 1039774705
+    locked: 0
+  - name: Water
+    uniqueID: 218918055
     locked: 0
   - name: Combat
     uniqueID: 3356904433

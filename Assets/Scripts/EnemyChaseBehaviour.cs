@@ -11,7 +11,7 @@ public class EnemyChaseBehaviour : MonoBehaviour
 
     private Vector3 currentTarget;
     private ObjectsInSea objectsInSea;
-    private float circleCastRadius = 1.5f;
+    private float circleCastRadius = 2.0f;
     GameObject nearestCat;
 
 

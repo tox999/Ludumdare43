@@ -23,7 +23,10 @@ public class Game : MonoBehaviour {
     public void Start()
     {
         if (PauseOnStart)
+        {
             PauseGame();
+            menuPanel.SetActive(true);
+        }
         else
             menuPanel.SetActive(false);
     }

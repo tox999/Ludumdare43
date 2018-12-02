@@ -14,12 +14,10 @@ public class EnemyChaseBehaviour : MonoBehaviour
     private float circleCastRadius = 2.0f;
     GameObject nearestCat;
 
-
     private void Awake()
     {
         nearestCat = new GameObject();
-        GameObject fishSpawner = gameObject.transform.parent.gameObject;
-        objectsInSea = fishSpawner.GetComponentInParent<ObjectsInSea>();
+        objectsInSea = FindObjectOfType<ObjectsInSea>();
     }
 
     private void OnEnable()
@@ -36,10 +34,9 @@ public class EnemyChaseBehaviour : MonoBehaviour
     private void GetNearestLeg()
     {
         RaycastHit2D nearestLeg = new RaycastHit2D();
-        RaycastHit2D leftHit = Physics2D.CircleCast(transform.position, circleCastRadius, Vector3.left, Mathf.Infinity, legsLayerMask.value);
-        RaycastHit2D rightHit = Physics2D.CircleCast(transform.position, circleCastRadius, Vector3.right, Mathf.Infinity, legsLayerMask.value);
+        RaycastHit2D leftHit = Physics2D.CircleCast(transform.position, circleCastRadius, Vector3.left, 40, legsLayerMask.value);
+        RaycastHit2D rightHit = Physics2D.CircleCast(transform.position, circleCastRadius, Vector3.right, 40, legsLayerMask.value);
 
-        
         if (leftHit.collider == null && rightHit.collider == null)
         {
             Debug.LogError("There are no legs to eat!!!");

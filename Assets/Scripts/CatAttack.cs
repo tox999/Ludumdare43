@@ -12,5 +12,4 @@ public class CatAttack : MonoBehaviour
     {
         currentHP = catStats.HP;
     }
-
 }

@@ -9,6 +9,7 @@ public class Island : MonoBehaviour
     Mimics mimics;
 
     public float currentHP;
+    [Range(0,1)] public float currentWeightPercent;
 
     Game game;
     CountCatsOnIsland catsOnIsland;
@@ -36,9 +37,9 @@ public class Island : MonoBehaviour
 
     private void CheckMaxWeight()
     {
-        if (catsOnIsland.weightOfAllCatsOnIsland >= islandStats.maxWeight)
+        currentWeightPercent = catsOnIsland.weightOfAllCatsOnIsland / islandStats.maxWeight;
+        if (currentWeightPercent >= 1)
         {
-            Debug.Log("Island is overloaded with cats!!!");
             game.EndGame();
         }
     }

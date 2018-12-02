@@ -5,6 +5,7 @@ using UnityEngine;
 public class NewObjectInSea : MonoBehaviour
 {
     [SerializeField] int catLayer = 18;
+    [SerializeField] float waterDrag = 7f;
 
     private ObjectsInSea objectsInSea;
 
@@ -18,6 +19,7 @@ public class NewObjectInSea : MonoBehaviour
         if (collision.gameObject.layer == catLayer)
         {
             GameObject newCatInSea = collision.gameObject;
+            newCatInSea.GetComponent<Rigidbody2D>().drag = waterDrag;
             objectsInSea.AddCatToSea(newCatInSea);
         }
     }
@@ -27,6 +29,7 @@ public class NewObjectInSea : MonoBehaviour
         if (collision.gameObject.layer == catLayer)
         {
             GameObject catOutOfSea = collision.gameObject;
+            catOutOfSea.GetComponent<Rigidbody2D>().gravityScale = 1f;
             objectsInSea.RemoveCatFromSea(catOutOfSea);
         }
     }

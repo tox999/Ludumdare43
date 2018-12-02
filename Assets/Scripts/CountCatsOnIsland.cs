@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class CountCatsOnIsland : MonoBehaviour {
 
-    public float weightOfAllCatsOnIsland = 0;
+    public float weightOfAllCatsOnIsland;
     [SerializeField] int catLayer = 18;
 
-	void Update()
+    private void Awake()
+    {
+        weightOfAllCatsOnIsland = 0;
+    }
+
+    void Update()
     {
 		
 	}

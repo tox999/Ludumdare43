@@ -99,6 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishStats: {fileID: 11400000, guid: 87b1fca7e1df6b6438385fe89ec2f1ea, type: 2}
+  fishDamageParticle: {fileID: 1768167093932044, guid: 09614fcbcf78c384fb44be58574d42f3,
+    type: 2}
+  fishDeathParticle: {fileID: 1615750191790086, guid: e86cd4bb52cf9c74a91217def65a1fec,
+    type: 2}
   catLayer: 18
   legLayer: 16
   currentHP: 0

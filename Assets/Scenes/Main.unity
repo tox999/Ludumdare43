@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 123927945}
   - component: {fileID: 123927946}
   - component: {fileID: 123927947}
+  - component: {fileID: 123927948}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -276,6 +277,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseOnStart: 0
   menuPanel: {fileID: 1409512255}
+--- !u!114 &123927948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 123927944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e689d9d9602d42042baad9a7f6f59ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &177494614
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 370878671}
   - component: {fileID: 370878672}
+  - component: {fileID: 370878673}
   m_Layer: 0
   m_Name: Face
   m_TagString: Untagged
@@ -527,6 +540,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &370878673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 370878670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae60f2f37f2c1f4f919070f9d7e323c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Faces:
+  - Name: Default
+    Sprite: {fileID: 21300000, guid: c6e1c38a70599164baf7bfad03a98866, type: 3}
+  - Name: Hurt
+    Sprite: {fileID: 21300000, guid: 722250f6225cec243bcbac6c7dd41d37, type: 3}
+  - Name: Lick
+    Sprite: {fileID: 21300000, guid: dae881b7a1aa88a45900967f1f4cda61, type: 3}
+  - Name: Shock
+    Sprite: {fileID: 21300000, guid: d92ea5583c641594d8db3453b13334f3, type: 3}
+  - Name: Tired
+    Sprite: {fileID: 21300000, guid: 72c0ca3f16a74444a8d9e5655bca3b33, type: 3}
 --- !u!1 &387544694
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +833,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &468440600
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1591539429}
+    m_Modifications:
+    - target: {fileID: 4038517923953176, guid: bbfc8abe2db6e1044bc88b227e0401b0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038517923953176, guid: bbfc8abe2db6e1044bc88b227e0401b0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038517923953176, guid: bbfc8abe2db6e1044bc88b227e0401b0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038517923953176, guid: bbfc8abe2db6e1044bc88b227e0401b0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038517923953176, guid: bbfc8abe2db6e1044bc88b227e0401b0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038517923953176, guid: bbfc8abe2db6e1044bc88b227e0401b0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038517923953176, guid: bbfc8abe2db6e1044bc88b227e0401b0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4038517923953176, guid: bbfc8abe2db6e1044bc88b227e0401b0, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bbfc8abe2db6e1044bc88b227e0401b0, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &468440601 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4038517923953176, guid: bbfc8abe2db6e1044bc88b227e0401b0,
+    type: 2}
+  m_PrefabInternal: {fileID: 468440600}
 --- !u!1 &485217160
 GameObject:
   m_ObjectHideFlags: 0
@@ -2727,6 +2809,7 @@ Transform:
   - {fileID: 561188307}
   - {fileID: 387544695}
   - {fileID: 1186446475}
+  - {fileID: 468440601}
   m_Father: {fileID: 1335176423}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

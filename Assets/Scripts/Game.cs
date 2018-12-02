@@ -56,6 +56,12 @@ public class Game : MonoBehaviour {
         menuPanel.SetActive(true);
         //Disable scripts that still work while timescale is set to 0
     }
+    public void EndGame()
+    {
+        PauseGame();
+        // reload MainScene
+        //show gameover panel
+    }
     public void ContinueGame()
     {
         Time.timeScale = 1;

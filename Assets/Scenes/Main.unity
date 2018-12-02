@@ -264,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingsPath: Assets/Data/Settings
   tongue: {fileID: 1938606852}
+  mimics: {fileID: 370878673}
   Action1: 0
 --- !u!114 &123927947
 MonoBehaviour:
@@ -530,7 +531,7 @@ SpriteRenderer:
   m_SortingLayerID: 1039774705
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: be499cc3afbfde64f88090e33aa62af9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e1c38a70599164baf7bfad03a98866, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -552,8 +553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae60f2f37f2c1f4f919070f9d7e323c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Faces: {fileID: 0}
-  CurrentFace: Default
+  Faces: {fileID: 11400000, guid: e4d9b504569328c4c83d678733982da7, type: 2}
+  CurrentFace: default
 --- !u!1 &387544694
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,6 +3269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandStats: {fileID: 11400000, guid: 87bc1ce1e272e2d49a53de3e63527bee, type: 2}
+  mimics: {fileID: 370878673}
   currentHP: 0
 --- !u!1 &1771841432
 GameObject:

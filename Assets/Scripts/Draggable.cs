@@ -56,11 +56,7 @@ public class Draggable : MonoBehaviour {
             transform.position = mousePosition;
             mouseActions.Attach(gameObject);
         }
-        transform.position = mousePosition;
-        mouseActions.Attach(gameObject);
-        
+        // vymazat    transform.position = mousePosition;
+        // vymazat    mouseActions.Attach(gameObject);
     }
-
-   
-
 }

@@ -10,6 +10,10 @@ public class Harpoon : MonoBehaviour
     private bool canMove = false;
     float minDistance = 0.05f;
     [SerializeField] int fishLayer = 17;
+    [SerializeField] float pushForce = 1;
+
+    [HideInInspector]
+    public Vector3 SpawnLocation;
 
 	void Update()
     {
@@ -40,6 +44,8 @@ public class Harpoon : MonoBehaviour
             GameObject hitFish = collision.gameObject;
             if (hitFish != null)
             {
+                StartCoroutine(PushTarget(hitFish, hitFish.transform.position - SpawnLocation));
+                hitFish.GetComponent<SpriteSwitcher>().ChangeSprite("get_hit");
                 hitFish.GetComponent<FishAttack>().currentHP -= damage;
                 GameObject damageParticle = Instantiate(hitFish.GetComponent<FishAttack>().fishDamageParticle, hitFish.transform.position, Quaternion.identity);
                 Destroy(damageParticle, 3);
@@ -48,10 +54,29 @@ public class Harpoon : MonoBehaviour
                     GameObject deathParticle = Instantiate(hitFish.GetComponent<FishAttack>().fishDeathParticle, hitFish.transform.position, Quaternion.identity);
                     Destroy(deathParticle, 3);
                     Destroy(hitFish.transform.parent.gameObject);
+                    hitFish.GetComponent<SpriteSwitcher>().ChangeSprite("dead");
                 }
             }
             Destroy(gameObject);
         }
+
+    }
+
+    IEnumerator PushTarget(GameObject target, Vector3 direction, float force=0.2f, float speed=0.1f)
+    {
+        //float t = 0;
+        //float maxT = 1;
+        Vector3 start = target.transform.position;
+        Vector3 end = start + (direction.normalized * force);
+        target.transform.position = end;
+
+        yield return null;
+        //while (t < maxT)
+        //{
+        //    target.transform.position = Vector3.Lerp(start, end, (t / maxT));
+        //    t += Time.deltaTime;
+        //    yield return null;
+        //}
 
     }
 }

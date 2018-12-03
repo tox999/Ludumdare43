@@ -18,6 +18,13 @@ public class CatAttack : MonoBehaviour
     FishAttack nearestFish;
     GameObject pointToAttack;
 
+    SpriteSwitcher sswitcher;
+    
+    private void Awake()
+    {
+        sswitcher = GetComponent<SpriteSwitcher>();
+    }
+
     private void Start()
     {
         pointToAttack = FindObjectOfType<AttackPoint>().GetComponent<AttackPoint>().attackPointRendered;
@@ -82,16 +89,22 @@ public class CatAttack : MonoBehaviour
 
     IEnumerator ThrowHarpoon()
     {
+        if (sswitcher.CurrentSpriteName != "attack")
+        {
+            sswitcher.ChangeSprite("attack");
+        }        
         canAttack = false;
         GameObject newHarpoon = Instantiate(harpoon, transform.position, Quaternion.identity);
         //Vector3 throwTarget = (nearestFish.transform.position);
         Vector3 throwTarget = pointToAttack.transform.position;
         newHarpoon.GetComponent<Harpoon>().SetTargetSpeedDamage(throwTarget, Random.Range(catStats.projectileSpeedMin, catStats.projectileSpeedMax), catStats.damage);
+        newHarpoon.GetComponent<Harpoon>().SpawnLocation = transform.position;
         yield return new WaitForSeconds(Random.Range(catStats.attackSpeedMin, catStats.attackSpeedMax));
         if (catOnIsland)
         {
             canAttack = true;
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: BlueFishSprites
+  m_EditorClassIdentifier: Assembly-CSharp::SpriteDict
+  NamedSprites:
+  - Name: default
+    Sprite: {fileID: 21300000, guid: b11c8f66c3095c74b9a246fd47378923, type: 3}
+  - Name: attack
+    Sprite: {fileID: 21300000, guid: 51761fff106d2e442a2692f62383ed41, type: 3}
+  - Name: get_hit
+    Sprite: {fileID: 21300000, guid: a9181ee6b191c0947876fbbe85ecbd5a, type: 3}
+  - Name: dead
+    Sprite: {fileID: 21300000, guid: f70e9d2848e13584fb27a918e37fd98c, type: 3}

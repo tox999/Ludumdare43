@@ -8,13 +8,18 @@ public class Draggable : MonoBehaviour {
 
     [SerializeField]
     MouseActions mouseActions;
+<<<<<<< HEAD
     public bool isAttached;
+=======
+    SpriteSwitcher sswitcher;
+>>>>>>> f91522b4fcbd6512d0b8f7452ba5aee6697a760e
    
     void Awake ()
     {
         // Not the best solution, upgrade if possible
         mouseActions = FindObjectOfType<MouseActions>();
         mousePosition = Vector3.zero;
+        sswitcher = gameObject.GetComponent<SpriteSwitcher>();
     }
 
 
@@ -28,6 +33,15 @@ public class Draggable : MonoBehaviour {
     private void OnMouseUpAsButton()
     {
         mouseActions.Drop(gameObject);
+        sswitcher.ChangeSprite("falling");
+    }
+
+    private void OnMouseDown()
+    {
+        if (mouseActions.AttachedObject == gameObject)
+        {
+            sswitcher.ChangeSprite("holded");
+        }
     }
     */
 
@@ -39,11 +53,17 @@ public class Draggable : MonoBehaviour {
 
     private void OnMouseDrag()
     {
+<<<<<<< HEAD
         if (isAttached)
         {
             transform.position = mousePosition;
             mouseActions.Attach(gameObject);
         }
+=======
+        transform.position = mousePosition;
+        mouseActions.Attach(gameObject);
+        
+>>>>>>> f91522b4fcbd6512d0b8f7452ba5aee6697a760e
     }
 
    

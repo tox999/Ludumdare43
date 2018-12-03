@@ -20,12 +20,18 @@ public class FishAttack : MonoBehaviour {
 
     bool isAttacking = false;
 
+    SpriteSwitcher sswitcher;
+    
     private void Awake()
     {
         objectsInSea = FindObjectOfType<ObjectsInSea>();
         island = FindObjectOfType<Island>();
         currentHP = fishStats.HP;
+<<<<<<< HEAD
         mouseActionsScript = FindObjectOfType<Game>().GetComponent<MouseActions>();
+=======
+        sswitcher = GetComponent<SpriteSwitcher>();
+>>>>>>> f91522b4fcbd6512d0b8f7452ba5aee6697a760e
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -38,7 +44,7 @@ public class FishAttack : MonoBehaviour {
                 mouseActionsScript.Drop();
                 attactedObject.GetComponent<Draggable>().isAttached = false;
                 isAttacking = true;
-                StartCoroutine(AttackCat());
+                StartCoroutine(AttackCat());                
             }
         }
     }
@@ -51,12 +57,14 @@ public class FishAttack : MonoBehaviour {
             {
                 isAttacking = true;
                 StartCoroutine(AttackIsland());
+                
             }
         }
     }
             
     IEnumerator AttackCat()
     {
+        sswitcher.ChangeSprite("attack");
         if (attactedObject != null)
         {
             CatAttack cat = attactedObject.GetComponent<CatAttack>();
@@ -74,10 +82,12 @@ public class FishAttack : MonoBehaviour {
         }
         yield return new WaitForSeconds(fishStats.attackSpeedMin);
         isAttacking = false;
+        sswitcher.ChangeSprite("default");
     }
 
     IEnumerator AttackIsland()
     {
+        sswitcher.ChangeSprite("attack");
         if (attactedObject != null)
         {
             island.currentHP -= fishStats.damage;
@@ -90,13 +100,14 @@ public class FishAttack : MonoBehaviour {
         }
         yield return new WaitForSeconds(fishStats.attackSpeedMin);
         isAttacking = false;
+        sswitcher.ChangeSprite("default");
     }
     
 
     private void CatDeath()
     {
         if (attactedObject != null)
-        {
+        {            
             objectsInSea.RemoveCatFromSea(attactedObject);
             Destroy(attactedObject.transform.parent.gameObject);
         }

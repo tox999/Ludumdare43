@@ -13,6 +13,8 @@ public class Game : MonoBehaviour {
     GameObject menuPanel;
     [SerializeField]
     GameObject gameoverPanel;
+    [SerializeField]
+    Texture2D defaultCursor;
 
     //Settings settings;
     //string settingsPath = "Assets/Data/Settings.asset";
@@ -25,6 +27,7 @@ public class Game : MonoBehaviour {
 
     public void Start()
     {
+        Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
         if (PauseOnStart)
         {
             PauseGame();

@@ -14,11 +14,13 @@ public class Game : MonoBehaviour {
     [SerializeField]
     GameObject gameoverPanel;
     [SerializeField]
+    GameObject slidesPanel;
+    [SerializeField]
     Texture2D defaultCursor;
 
     //Settings settings;
     //string settingsPath = "Assets/Data/Settings.asset";
-    KeyCode pauseKey = KeyCode.P;
+    KeyCode pauseKey = KeyCode.Escape;
 
     private void Awake()
     {
@@ -46,14 +48,7 @@ public class Game : MonoBehaviour {
     {
         if (Input.GetKeyDown(pauseKey))
         {
-            if (!menuPanel.activeInHierarchy)
-            {
-                PauseGame();
-            }
-            if (menuPanel.activeInHierarchy)
-            {
-                ContinueGame();
-            }
+            PauseGame();
         }
     }
     public void PauseGame()

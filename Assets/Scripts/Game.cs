@@ -29,7 +29,7 @@ public class Game : MonoBehaviour {
 
     public void Start()
     {
-        Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(defaultCursor, new Vector2(defaultCursor.width/2, defaultCursor.height/2) , CursorMode.Auto);
         if (PauseOnStart)
         {
             PauseGame();

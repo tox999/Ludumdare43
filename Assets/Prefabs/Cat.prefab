@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4385336194366816}
   - component: {fileID: 212146669552540612}
-  - component: {fileID: 58993147086332078}
   - component: {fileID: 50532042213282794}
   - component: {fileID: 114792546028194244}
   - component: {fileID: 114403619245749636}
   - component: {fileID: 82461405352413908}
+  - component: {fileID: 70657199271407854}
   m_Layer: 18
   m_Name: Sprite
   m_TagString: Untagged
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1973762371951732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10.254606, y: -0.758775, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4385336194366816}
@@ -94,8 +94,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58993147086332078
-CircleCollider2D:
+--- !u!70 &70657199271407854
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -106,9 +106,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.01}
-  serializedVersion: 2
-  m_Radius: 0.46
+  m_Offset: {x: -0.020726454, y: -0.06736804}
+  m_Size: {x: 1.3988801, y: 0.9767666}
+  m_Direction: 1
 --- !u!82 &82461405352413908
 AudioSource:
   m_ObjectHideFlags: 1

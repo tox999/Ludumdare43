@@ -12,9 +12,11 @@ public class CatAttack : MonoBehaviour
     [SerializeField] GameObject harpoon;
 
     FishAttack nearestFish;
+    GameObject pointToAttack;
 
     private void Start()
     {
+        pointToAttack = FindObjectOfType<AttackPoint>().GetComponent<AttackPoint>().attackPointRendered;
         currentHP = catStats.HP;
     }
 
@@ -22,11 +24,13 @@ public class CatAttack : MonoBehaviour
     {
         if (canAttack)
         {
-            FindNearestFish();
-            AttackNearestFish();
+            //FindNearestFish();
+            //AttackNearestFish();
+            AttackPoint();
         }
     }
 
+    /*
     private void FindNearestFish()
     {
         FishAttack[] allfishes = FindObjectsOfType<FishAttack>();
@@ -52,20 +56,32 @@ public class CatAttack : MonoBehaviour
             }
         }
     }
+    */
 
-    private void AttackNearestFish()
+    private void AttackPoint()
     {
-        if (nearestFish !=null)
+        if (pointToAttack.transform.position != new Vector3 (0,0,0) && pointToAttack.activeSelf)
         {
             StartCoroutine(ThrowHarpoon());
         }
     }
 
+    /*   
+    private void AttackNearestFish()
+    {
+        if (nearestFish != null)
+        {
+            StartCoroutine(ThrowHarpoon());
+        }
+    }
+    */
+
     IEnumerator ThrowHarpoon()
     {
         canAttack = false;
         GameObject newHarpoon = Instantiate(harpoon, transform.position, Quaternion.identity);
-        Vector3 throwTarget = (nearestFish.transform.position);
+        //Vector3 throwTarget = (nearestFish.transform.position);
+        Vector3 throwTarget = pointToAttack.transform.position;
         newHarpoon.GetComponent<Harpoon>().SetTargetSpeedDamage(throwTarget, Random.Range(catStats.projectileSpeedMin, catStats.projectileSpeedMax), catStats.damage);
         yield return new WaitForSeconds(Random.Range(catStats.attackSpeedMin, catStats.attackSpeedMax));
         if (catOnIsland)

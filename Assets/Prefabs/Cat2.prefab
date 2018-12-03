@@ -35,10 +35,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4844517947800264}
   - component: {fileID: 212426154245547556}
-  - component: {fileID: 58340103687263552}
   - component: {fileID: 50918385975970202}
   - component: {fileID: 114987710218282234}
   - component: {fileID: 114106651251958850}
+  - component: {fileID: 70278531207199398}
   m_Layer: 18
   m_Name: Sprite
   m_TagString: Untagged
@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1192590194922724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10.063665, y: -2.886404, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4844517947800264}
@@ -93,8 +93,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58340103687263552
-CircleCollider2D:
+--- !u!70 &70278531207199398
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -105,9 +105,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.01}
-  serializedVersion: 2
-  m_Radius: 0.46
+  m_Offset: {x: -0.039832134, y: -0.10418252}
+  m_Size: {x: 1.4081236, y: 0.97199756}
+  m_Direction: 1
 --- !u!114 &114106651251958850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,6 +122,7 @@ MonoBehaviour:
   catStats: {fileID: 11400000, guid: a4752d86f9674104b8a97e5ec5462047, type: 2}
   currentHP: 0
   canAttack: 1
+  catsOnIslandLayer: 21
   harpoon: {fileID: 1466922106968546, guid: 02899a2730f49874ba42ca0eaa881f56, type: 2}
 --- !u!114 &114987710218282234
 MonoBehaviour:

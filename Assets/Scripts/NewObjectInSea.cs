@@ -33,5 +33,4 @@ public class NewObjectInSea : MonoBehaviour
             objectsInSea.RemoveCatFromSea(catOutOfSea);
         }
     }
-
 }

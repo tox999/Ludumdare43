@@ -16,6 +16,10 @@ public class Island : MonoBehaviour
     public float currentHP;
     [Range(0,1)] public float currentWeightPercent;
 
+    float tooMuchWeigh1 = 0.3f;
+    float tooMuchWeigh2 = 0.6f;
+    float tooMuchWeigh3 = 0.9f;
+
     Game game;
     CountCatsOnIsland catsOnIsland;
 
@@ -28,12 +32,35 @@ public class Island : MonoBehaviour
     
     private void Update()
     {
+        /*
         if (currentHP <= (currentHP * 0.2f))
             mimics.ChangeFace("tired");
         else if (currentHP <= (currentHP * 0.5f))
             mimics.ChangeFace("shocked");
+        */
+        ChangeMimimsByWeight();
         DrownWhenOverburdened();
         CheckMaxWeight();
+    }
+
+    private void ChangeMimimsByWeight()
+    {
+        if (currentWeightPercent <= tooMuchWeigh1)
+        {
+            mimics.ChangeCurrentFace("default");
+        }
+        else if (currentWeightPercent > tooMuchWeigh1 && currentWeightPercent <= tooMuchWeigh2)
+        {
+            mimics.ChangeCurrentFace("shock");
+        }
+        else if (currentWeightPercent > tooMuchWeigh2 && currentWeightPercent <= tooMuchWeigh3)
+        {
+            mimics.ChangeCurrentFace("tired");
+        }
+        else
+        {
+            mimics.ChangeCurrentFace("hurt");
+        }
     }
 
     private void DrownWhenOverburdened()

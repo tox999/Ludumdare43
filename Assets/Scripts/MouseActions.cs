@@ -56,7 +56,7 @@ public class MouseActions : MonoBehaviour {
         Debug.Log("DropFromHand");
         AttachedObject = null;
         tongue.SetActive(false);
-        mimics.ChangeFace("default");
+        mimics.ChangeFaceToCurrent();
     }
 
     /*

@@ -1408,13 +1408,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPointRendered: {fileID: 442907733}
-  acceptableLayerMasks:
-  - serializedVersion: 2
-    m_Bits: 2048
-  - serializedVersion: 2
-    m_Bits: 65536
-  - serializedVersion: 2
-    m_Bits: 131072
 --- !u!1 &517576473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,7 +2207,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 949287313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1547777749}
@@ -3389,7 +3382,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1502975216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1591539429}
@@ -3433,6 +3426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catLayer: 18
   waterDrag: 7
+  mouseInSea: 0
 --- !u!1 &1547777748
 GameObject:
   m_ObjectHideFlags: 0
@@ -3695,6 +3689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catLayer: 18
   waterDrag: 7
+  mouseInSea: 0
 --- !u!1 &1680910546
 GameObject:
   m_ObjectHideFlags: 0

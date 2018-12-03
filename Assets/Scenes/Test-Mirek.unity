@@ -1692,7 +1692,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 599770435}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 928443368}
@@ -1712,6 +1712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catLayer: 18
   waterDrag: 7
+  mouseInSea: 0
 --- !u!61 &599770438
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2121,7 +2122,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 672410399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2562299}
@@ -7168,6 +7169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catLayer: 18
   waterDrag: 7
+  mouseInSea: 0
 --- !u!114 &928443370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7689,13 +7691,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPointRendered: {fileID: 1838606137}
-  acceptableLayerMasks:
-  - serializedVersion: 2
-    m_Bits: 2048
-  - serializedVersion: 2
-    m_Bits: 65536
-  - serializedVersion: 2
-    m_Bits: 131072
 --- !u!1 &1156878856
 GameObject:
   m_ObjectHideFlags: 0

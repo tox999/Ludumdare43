@@ -29,6 +29,7 @@ public class Draggable : MonoBehaviour {
 
     private void OnMouseDrag()
     {
+        Debug.Log("Cat dragged");
         transform.position = mousePosition;
         mouseActions.Attach(gameObject);
     }

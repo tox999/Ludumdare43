@@ -6,6 +6,7 @@ public class NewObjectInSea : MonoBehaviour
 {
     [SerializeField] int catLayer = 18;
     [SerializeField] float waterDrag = 7f;
+    public bool mouseInSea;
 
     private ObjectsInSea objectsInSea;
 
@@ -32,5 +33,15 @@ public class NewObjectInSea : MonoBehaviour
             catOutOfSea.GetComponent<Rigidbody2D>().gravityScale = 1f;
             objectsInSea.RemoveCatFromSea(catOutOfSea);
         }
+    }
+
+    private void OnMouseEnter()
+    {
+        mouseInSea = true;
+    }
+
+    private void OnMouseExit()
+    {
+        mouseInSea = false;
     }
 }

@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114403619245749636}
   - component: {fileID: 82461405352413908}
   - component: {fileID: 70657199271407854}
+  - component: {fileID: 114010373130994912}
   m_Layer: 18
   m_Name: Sprite
   m_TagString: Untagged
@@ -204,6 +205,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114010373130994912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1380311825081942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94667003b432f414dad6eea6ebb8552e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NamedSprites: {fileID: 11400000, guid: efa8e6965b4292b499a3e43c2d160675, type: 2}
+  CurrentSprite: default
 --- !u!114 &114403619245749636
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -25,7 +25,6 @@ public class Mimics : MonoBehaviour {
 
     public void ChangeFace(string newFace)
     {
-        Debug.Log("Change face: " + newFace);
         var newSprite = Faces.GetSprite(newFace);
         if (newSprite == null)
         {

@@ -18,6 +18,13 @@ public class CatAttack : MonoBehaviour
     FishAttack nearestFish;
     GameObject pointToAttack;
 
+    SpriteSwitcher sswitcher;
+
+    private void Awake()
+    {
+        sswitcher = GetComponent<SpriteSwitcher>();
+    }
+
     private void Start()
     {
         pointToAttack = FindObjectOfType<AttackPoint>().GetComponent<AttackPoint>().attackPointRendered;
@@ -82,6 +89,7 @@ public class CatAttack : MonoBehaviour
 
     IEnumerator ThrowHarpoon()
     {
+        sswitcher.ChangeSprite("attack");
         canAttack = false;
         GameObject newHarpoon = Instantiate(harpoon, transform.position, Quaternion.identity);
         //Vector3 throwTarget = (nearestFish.transform.position);
@@ -92,6 +100,7 @@ public class CatAttack : MonoBehaviour
         {
             canAttack = true;
         }
+        sswitcher.ChangeSprite("default");
     }
 
     private void OnTriggerExit2D(Collider2D collision)

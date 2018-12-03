@@ -18,11 +18,14 @@ public class FishAttack : MonoBehaviour {
     Island island;
     bool isAttacking = false;
 
+    SpriteSwitcher sswitcher;
+    
     private void Awake()
     {
         objectsInSea = FindObjectOfType<ObjectsInSea>();
         island = FindObjectOfType<Island>();
         currentHP = fishStats.HP;
+        sswitcher = GetComponent<SpriteSwitcher>();
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -33,7 +36,7 @@ public class FishAttack : MonoBehaviour {
             if (!isAttacking)
             {
                 isAttacking = true;
-                StartCoroutine(AttackCat());
+                StartCoroutine(AttackCat());                
             }
         }
     }
@@ -46,12 +49,14 @@ public class FishAttack : MonoBehaviour {
             {
                 isAttacking = true;
                 StartCoroutine(AttackIsland());
+                
             }
         }
     }
             
     IEnumerator AttackCat()
     {
+        sswitcher.ChangeSprite("attack");
         if (attactedObject != null)
         {
             CatAttack cat = attactedObject.GetComponent<CatAttack>();
@@ -69,10 +74,12 @@ public class FishAttack : MonoBehaviour {
         }
         yield return new WaitForSeconds(fishStats.attackSpeedMin);
         isAttacking = false;
+        sswitcher.ChangeSprite("default");
     }
 
     IEnumerator AttackIsland()
     {
+        sswitcher.ChangeSprite("attack");
         if (attactedObject != null)
         {
             island.currentHP -= fishStats.damage;
@@ -85,6 +92,7 @@ public class FishAttack : MonoBehaviour {
         }
         yield return new WaitForSeconds(fishStats.attackSpeedMin);
         isAttacking = false;
+        sswitcher.ChangeSprite("default");
     }
     
 
@@ -92,6 +100,7 @@ public class FishAttack : MonoBehaviour {
     {
         if (attactedObject != null)
         {
+            attactedObject.GetComponent<SpriteSwitcher>().ChangeSprite("dead");
             objectsInSea.RemoveCatFromSea(attactedObject);
             Destroy(attactedObject.transform.parent.gameObject);
         }

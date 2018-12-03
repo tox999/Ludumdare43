@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114351298393382916}
   - component: {fileID: 114180130564283150}
   - component: {fileID: 70627851613505516}
+  - component: {fileID: 114295526725245800}
   m_Layer: 18
   m_Name: Sprite
   m_TagString: Untagged
@@ -128,6 +129,19 @@ MonoBehaviour:
     type: 2}
   catDeathParticle: {fileID: 1319892941773962, guid: ae31afe53b30ebe44bc56c254dff80fb,
     type: 2}
+--- !u!114 &114295526725245800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1299155818948022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94667003b432f414dad6eea6ebb8552e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NamedSprites: {fileID: 11400000, guid: 9311ec3d29c2a404d9552be5d7afaa6a, type: 2}
+  CurrentSprite: default
 --- !u!114 &114351298393382916
 MonoBehaviour:
   m_ObjectHideFlags: 1

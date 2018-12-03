@@ -78,16 +78,19 @@ public class EnemyChaseBehaviour : MonoBehaviour
         float nearestCatDistance = 0;
         foreach (GameObject cat in objectsInSea.catsInSea)
         {
-            float distanceToCat = (transform.position - cat.transform.position).magnitude;
-            if (nearestCatDistance == 0)
+            if(cat != null)
             {
-                nearestCatDistance = distanceToCat;
-                nearestCat = cat;
-            }
-            else if (distanceToCat < nearestCatDistance)
-            {
-                nearestCatDistance = distanceToCat;
-                nearestCat = cat;
+                float distanceToCat = (transform.position - cat.transform.position).magnitude;
+                if (nearestCatDistance == 0)
+                {
+                    nearestCatDistance = distanceToCat;
+                    nearestCat = cat;
+                }
+                else if (distanceToCat < nearestCatDistance)
+                {
+                    nearestCatDistance = distanceToCat;
+                    nearestCat = cat;
+                }
             }
         }
     }

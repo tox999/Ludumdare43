@@ -16,6 +16,8 @@ public class FishAttack : MonoBehaviour {
     GameObject attactedObject;
     ObjectsInSea objectsInSea;
     Island island;
+    MouseActions mouseActionsScript;
+
     bool isAttacking = false;
 
     private void Awake()
@@ -23,6 +25,7 @@ public class FishAttack : MonoBehaviour {
         objectsInSea = FindObjectOfType<ObjectsInSea>();
         island = FindObjectOfType<Island>();
         currentHP = fishStats.HP;
+        mouseActionsScript = FindObjectOfType<Game>().GetComponent<MouseActions>();
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -32,6 +35,8 @@ public class FishAttack : MonoBehaviour {
             attactedObject = collision.gameObject;
             if (!isAttacking)
             {
+                mouseActionsScript.Drop();
+                attactedObject.GetComponent<Draggable>().isAttached = false;
                 isAttacking = true;
                 StartCoroutine(AttackCat());
             }

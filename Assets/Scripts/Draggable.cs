@@ -8,6 +8,7 @@ public class Draggable : MonoBehaviour {
 
     [SerializeField]
     MouseActions mouseActions;
+    public bool isAttached;
    
     void Awake ()
     {
@@ -16,21 +17,33 @@ public class Draggable : MonoBehaviour {
         mousePosition = Vector3.zero;
     }
 
+
     void LateUpdate ()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
     }
 
+    /*
     private void OnMouseUpAsButton()
     {
         mouseActions.Drop(gameObject);
     }
+    */
+
+    private void OnMouseDown()
+    {
+        isAttached = true;
+    }
+
 
     private void OnMouseDrag()
     {
-        transform.position = mousePosition;
-        mouseActions.Attach(gameObject);
+        if (isAttached)
+        {
+            transform.position = mousePosition;
+            mouseActions.Attach(gameObject);
+        }
     }
 
    

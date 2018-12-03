@@ -13,7 +13,7 @@ public class MouseActions : MonoBehaviour {
     Mimics mimics;
     Settings settings;
 
-    GameObject attachedObject;
+    public GameObject attachedObject;
 
     [HideInInspector]
     public KeyCode Action1 = KeyCode.Mouse0;
@@ -32,8 +32,12 @@ public class MouseActions : MonoBehaviour {
         //if (Input.GetKey(Action1))
         //{
         //    Drop(attachedObject);
-
         //}
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            Drop();
+        }
     }
 
     public void Attach(GameObject attachedObject)
@@ -43,15 +47,27 @@ public class MouseActions : MonoBehaviour {
         mimics.ChangeFace("lick");
     }
 
-    public void Drop(GameObject attachedObject)
+    public void Drop()
     {
-        // start some effect
-        Debug.Log("DropFromHand");
-        this.attachedObject = null;
+        attachedObject = null;
         tongue.SetActive(false);
         mimics.ChangeFace("default");
     }
 
+    /*
+    public void AttachedEaten(GameObject attachedObject)
+    {
+        if (this.attachedObject == attachedObject)
+        {
+            this.attachedObject = null;
+            tongue.SetActive(false);
+            mimics.ChangeFace("default");
+        }
+    }
+    */
+
+
+    //not used
     public void ThrowAttached(GameObject attachedObject)
     {
         // start Some effect ...
@@ -60,9 +76,5 @@ public class MouseActions : MonoBehaviour {
         tongue.SetActive(false);
         mimics.ChangeFace("default");
     }
-
-    public void EatAttached(GameObject attachedObject)
-    {
-        this.attachedObject = null;
-    }
+       
 }

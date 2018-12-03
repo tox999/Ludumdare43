@@ -9,6 +9,8 @@ public class Stats : ScriptableObject
 
     public float damage;
 
+    public float heal;
+
     public float attackSpeedMin;
 
     public float attackSpeedMax;

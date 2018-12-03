@@ -16,6 +16,8 @@ public class FishAttack : MonoBehaviour {
     GameObject attactedObject;
     ObjectsInSea objectsInSea;
     Island island;
+    MouseActions mouseActionsScript;
+
     bool isAttacking = false;
 
     SpriteSwitcher sswitcher;
@@ -25,6 +27,7 @@ public class FishAttack : MonoBehaviour {
         objectsInSea = FindObjectOfType<ObjectsInSea>();
         island = FindObjectOfType<Island>();
         currentHP = fishStats.HP;
+        mouseActionsScript = FindObjectOfType<Game>().GetComponent<MouseActions>();
         sswitcher = GetComponent<SpriteSwitcher>();
     }
 
@@ -35,6 +38,8 @@ public class FishAttack : MonoBehaviour {
             attactedObject = collision.gameObject;
             if (!isAttacking)
             {
+                mouseActionsScript.Drop();
+                attactedObject.GetComponent<Draggable>().isAttached = false;
                 isAttacking = true;
                 StartCoroutine(AttackCat());                
             }
@@ -99,8 +104,7 @@ public class FishAttack : MonoBehaviour {
     private void CatDeath()
     {
         if (attactedObject != null)
-        {
-            attactedObject.GetComponent<SpriteSwitcher>().ChangeSprite("dead");
+        {            
             objectsInSea.RemoveCatFromSea(attactedObject);
             Destroy(attactedObject.transform.parent.gameObject);
         }

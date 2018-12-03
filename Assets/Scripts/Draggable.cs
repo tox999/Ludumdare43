@@ -8,6 +8,8 @@ public class Draggable : MonoBehaviour {
 
     [SerializeField]
     MouseActions mouseActions;
+
+    public bool isAttached;
     SpriteSwitcher sswitcher;
    
     void Awake ()
@@ -18,12 +20,14 @@ public class Draggable : MonoBehaviour {
         sswitcher = gameObject.GetComponent<SpriteSwitcher>();
     }
 
+
     void LateUpdate ()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
     }
 
+    /*
     private void OnMouseUpAsButton()
     {
         mouseActions.Drop(gameObject);
@@ -37,9 +41,21 @@ public class Draggable : MonoBehaviour {
             sswitcher.ChangeSprite("holded");
         }
     }
+    */
+
+    private void OnMouseDown()
+    {
+        isAttached = true;
+    }
+
 
     private void OnMouseDrag()
     {
+        if (isAttached)
+        {
+            transform.position = mousePosition;
+            mouseActions.Attach(gameObject);
+        }
         transform.position = mousePosition;
         mouseActions.Attach(gameObject);
         

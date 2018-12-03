@@ -10,12 +10,14 @@ public class EatCat : MonoBehaviour
     ObjectsInSea objectsInSea;
     Island island;
     float islandMaxHP;
+    MouseActions mouseActionsScript;
 
     private void Awake()
     {
         objectsInSea = FindObjectOfType<ObjectsInSea>();
         island = FindObjectOfType<Island>().GetComponent<Island>();
         islandMaxHP = island.islandStats.HP;
+        mouseActionsScript = FindObjectOfType<Game>().GetComponent<MouseActions>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -25,9 +27,11 @@ public class EatCat : MonoBehaviour
             catObject = collision.gameObject;
             if (island.currentHP < islandMaxHP)
             {
-                KillCat();
-                HealIsland();
-                //ChangeIslandMimics();
+                if (mouseActionsScript.AttachedObject == null)
+                {
+                    KillCat();
+                    HealIsland();
+                }
             }
 
         }
@@ -37,6 +41,7 @@ public class EatCat : MonoBehaviour
     {
         if (catObject != null)
         {
+            mouseActionsScript.Drop(); 
             CatAttack catScript = catObject.GetComponent<CatAttack>();
             GameObject deathParticle = Instantiate(catScript.catDeathParticle, catScript.transform.position, Quaternion.identity);
             Destroy(deathParticle, 3);
@@ -68,10 +73,4 @@ public class EatCat : MonoBehaviour
             }
         }
     }
-
-
-
-
-
-
 }

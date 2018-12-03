@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishLayer: 17
+  pushForce: 1
+  SpawnLocation: {x: 0, y: 0, z: 0}
 --- !u!212 &212860551190169566
 SpriteRenderer:
   m_ObjectHideFlags: 1

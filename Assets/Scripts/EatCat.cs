@@ -27,7 +27,7 @@ public class EatCat : MonoBehaviour
             catObject = collision.gameObject;
             if (island.currentHP < islandMaxHP)
             {
-                if (mouseActionsScript.attachedObject == null)
+                if (mouseActionsScript.AttachedObject == null)
                 {
                     KillCat();
                     HealIsland();

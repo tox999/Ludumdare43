@@ -8,11 +8,9 @@ public class Draggable : MonoBehaviour {
 
     [SerializeField]
     MouseActions mouseActions;
-<<<<<<< HEAD
+
     public bool isAttached;
-=======
     SpriteSwitcher sswitcher;
->>>>>>> f91522b4fcbd6512d0b8f7452ba5aee6697a760e
    
     void Awake ()
     {
@@ -53,17 +51,14 @@ public class Draggable : MonoBehaviour {
 
     private void OnMouseDrag()
     {
-<<<<<<< HEAD
         if (isAttached)
         {
             transform.position = mousePosition;
             mouseActions.Attach(gameObject);
         }
-=======
         transform.position = mousePosition;
         mouseActions.Attach(gameObject);
         
->>>>>>> f91522b4fcbd6512d0b8f7452ba5aee6697a760e
     }
 
    

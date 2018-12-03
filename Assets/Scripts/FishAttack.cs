@@ -27,11 +27,8 @@ public class FishAttack : MonoBehaviour {
         objectsInSea = FindObjectOfType<ObjectsInSea>();
         island = FindObjectOfType<Island>();
         currentHP = fishStats.HP;
-<<<<<<< HEAD
         mouseActionsScript = FindObjectOfType<Game>().GetComponent<MouseActions>();
-=======
         sswitcher = GetComponent<SpriteSwitcher>();
->>>>>>> f91522b4fcbd6512d0b8f7452ba5aee6697a760e
     }
 
     private void OnCollisionStay2D(Collision2D collision)

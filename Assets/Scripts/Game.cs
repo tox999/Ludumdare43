@@ -76,4 +76,9 @@ public class Game : MonoBehaviour {
         menuPanel.SetActive(false);
         //enable the scripts again
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

@@ -56,9 +56,13 @@ public class FishAttack : MonoBehaviour {
         {
             CatAttack cat = attactedObject.GetComponent<CatAttack>();
             cat.currentHP -= fishStats.damage;
+            GameObject damageParticle = Instantiate(cat.catDamageParticle, cat.transform.position, Quaternion.identity);
+            Destroy(damageParticle, 3);
             if (cat.currentHP <= 0)
             {
                 isAttacking = false;
+                GameObject deathParticle = Instantiate(cat.catDeathParticle, cat.transform.position, Quaternion.identity);
+                Destroy(deathParticle, 3);
                 CatDeath();
                 StopCoroutine(AttackCat());
             }

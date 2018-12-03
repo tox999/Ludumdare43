@@ -11,6 +11,10 @@ public class CatAttack : MonoBehaviour
     [SerializeField] int catsOnIslandLayer = 21;
     [SerializeField] GameObject harpoon;
 
+    public GameObject catDamageParticle;
+    public GameObject catDeathParticle;
+
+
     FishAttack nearestFish;
     GameObject pointToAttack;
 

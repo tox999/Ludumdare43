@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1380311825081942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.29, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4542924098748226}
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1973762371951732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.254606, y: -0.758775, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4385336194366816}
@@ -220,6 +220,10 @@ MonoBehaviour:
   canAttack: 1
   catsOnIslandLayer: 21
   harpoon: {fileID: 1466922106968546, guid: 02899a2730f49874ba42ca0eaa881f56, type: 2}
+  catDamageParticle: {fileID: 1975219401980378, guid: 3abbab1eeb607f94b83ea8ec9eaddc62,
+    type: 2}
+  catDeathParticle: {fileID: 1319892941773962, guid: ae31afe53b30ebe44bc56c254dff80fb,
+    type: 2}
 --- !u!114 &114792546028194244
 MonoBehaviour:
   m_ObjectHideFlags: 1

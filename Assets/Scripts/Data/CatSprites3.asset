@@ -14,7 +14,7 @@ MonoBehaviour:
   NamedSprites:
   - Name: default
     Sprite: {fileID: 21300000, guid: ef0381d3b7a116d4991296c9b7962872, type: 3}
-  - Name: attacking
+  - Name: attack
     Sprite: {fileID: 21300000, guid: d4b001c7625d97f45b29bfd378281784, type: 3}
   - Name: drowning
     Sprite: {fileID: 21300000, guid: fd30acfaaeef8ee4ca3194ee528b8735, type: 3}

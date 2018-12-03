@@ -7,7 +7,7 @@ public class SpriteSwitcher : MonoBehaviour {
     [SerializeField]
     SpriteDict NamedSprites;
 
-    public string CurrentSprite = "default";
+    public string CurrentSpriteName = "default";
     SpriteRenderer spriteRenderer;
 
     // Use this for initialization
@@ -18,15 +18,16 @@ public class SpriteSwitcher : MonoBehaviour {
 
     public void ChangeSprite(string newSpriteName)
     {
-        Debug.Log(string.Format("Will change sprite from {0} to {1}", CurrentSprite, newSpriteName));
+        Debug.Log(string.Format("Will change sprite from {0} to {1}", CurrentSpriteName, newSpriteName));
         var newSprite = NamedSprites.GetSprite(newSpriteName);
         if (newSprite == null)
         {
-            Debug.LogError("New sprite is null; probabbly invalid sprite name: " + newSpriteName);
+            Debug.LogError("New sprite is null; probabbly invalid sprite name: "
+                + newSpriteName + " in object: " + transform.parent.name + "_" + gameObject.name);
             return;
         }
 
-        CurrentSprite = newSpriteName;
+        CurrentSpriteName = newSpriteName;
         spriteRenderer.sprite = newSprite;
     }
 }

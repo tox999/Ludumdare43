@@ -99,8 +99,7 @@ public class FishAttack : MonoBehaviour {
     private void CatDeath()
     {
         if (attactedObject != null)
-        {
-            attactedObject.GetComponent<SpriteSwitcher>().ChangeSprite("dead");
+        {            
             objectsInSea.RemoveCatFromSea(attactedObject);
             Destroy(attactedObject.transform.parent.gameObject);
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteSwitcher : MonoBehaviour {
-
+    /*
     [SerializeField]
     SpriteDict NamedSprites;
 
@@ -29,5 +29,5 @@ public class SpriteSwitcher : MonoBehaviour {
 
         CurrentSpriteName = newSpriteName;
         spriteRenderer.sprite = newSprite;
-    }
+    }*/
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,11 +19,11 @@ public class CatAttack : MonoBehaviour
     FishAttack nearestFish;
     GameObject pointToAttack;
 
-    SpriteSwitcher sswitcher;
+    //SpriteSwitcher sswitcher;
     
     private void Awake()
     {
-        sswitcher = GetComponent<SpriteSwitcher>();
+        //sswitcher = GetComponent<SpriteSwitcher>();
     }
 
     private void Start()
@@ -89,17 +90,19 @@ public class CatAttack : MonoBehaviour
 
     IEnumerator ThrowHarpoon()
     {
+        /*
         if (sswitcher.CurrentSpriteName != "attack")
         {
             sswitcher.ChangeSprite("attack");
-        }        
+        }  
+        */
         canAttack = false;
         GameObject newHarpoon = Instantiate(harpoon, transform.position, Quaternion.identity);
         //Vector3 throwTarget = (nearestFish.transform.position);
         Vector3 throwTarget = pointToAttack.transform.position;
-        newHarpoon.GetComponent<Harpoon>().SetTargetSpeedDamage(throwTarget, Random.Range(catStats.projectileSpeedMin, catStats.projectileSpeedMax), catStats.damage);
+        newHarpoon.GetComponent<Harpoon>().SetTargetSpeedDamage(throwTarget, UnityEngine.Random.Range(catStats.projectileSpeedMin, catStats.projectileSpeedMax), catStats.damage);
         newHarpoon.GetComponent<Harpoon>().SpawnLocation = transform.position;
-        yield return new WaitForSeconds(Random.Range(catStats.attackSpeedMin, catStats.attackSpeedMax));
+        yield return new WaitForSeconds(UnityEngine.Random.Range(catStats.attackSpeedMin, catStats.attackSpeedMax));
         if (catOnIsland)
         {
             canAttack = true;

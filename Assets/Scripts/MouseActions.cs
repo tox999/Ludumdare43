@@ -46,7 +46,7 @@ public class MouseActions : MonoBehaviour {
         AttachedObject = attachedObject;
         tongue.SetActive(true);
         mimics.ChangeFace("lick");
-        this.AttachedObject.GetComponent<SpriteSwitcher>().ChangeSprite("falling");
+        //this.AttachedObject.GetComponent<SpriteSwitcher>().ChangeSprite("falling");
     }
 
     public void Drop()
@@ -56,7 +56,7 @@ public class MouseActions : MonoBehaviour {
         Debug.Log("DropFromHand");
         AttachedObject = null;
         tongue.SetActive(false);
-        mimics.ChangeFace("default");
+        mimics.ChangeFaceToCurrent();
     }
 
     /*

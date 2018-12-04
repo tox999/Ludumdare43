@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -45,7 +46,7 @@ public class Harpoon : MonoBehaviour
             if (hitFish != null)
             {
                 StartCoroutine(PushTarget(hitFish, hitFish.transform.position - SpawnLocation));
-                hitFish.GetComponent<SpriteSwitcher>().ChangeSprite("get_hit");
+                //hitFish.GetComponent<SpriteSwitcher>().ChangeSprite("get_hit");
                 hitFish.GetComponent<FishAttack>().currentHP -= damage;
                 GameObject damageParticle = Instantiate(hitFish.GetComponent<FishAttack>().fishDamageParticle, hitFish.transform.position, Quaternion.identity);
                 Destroy(damageParticle, 3);
@@ -54,7 +55,7 @@ public class Harpoon : MonoBehaviour
                     GameObject deathParticle = Instantiate(hitFish.GetComponent<FishAttack>().fishDeathParticle, hitFish.transform.position, Quaternion.identity);
                     Destroy(deathParticle, 3);
                     Destroy(hitFish.transform.parent.gameObject);
-                    hitFish.GetComponent<SpriteSwitcher>().ChangeSprite("dead");
+                    //hitFish.GetComponent<SpriteSwitcher>().ChangeSprite("dead");
                 }
             }
             Destroy(gameObject);

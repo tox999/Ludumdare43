@@ -17,7 +17,7 @@ MonoBehaviour:
   attackSpeedMin: 1.5
   attackSpeedMax: 2.5
   attackRange: 20
-  projectileSpeedMin: 5
+  projectileSpeedMin: 9,5
   projectileSpeedMax: 10
-  weight: 10
+  weight: 20
   maxWeight: 0

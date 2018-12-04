@@ -22,7 +22,7 @@ public class NewObjectInSea : MonoBehaviour
             GameObject newCatInSea = collision.gameObject;
             newCatInSea.GetComponent<Rigidbody2D>().drag = waterDrag;
             objectsInSea.AddCatToSea(newCatInSea);
-            //newCatInSea.GetComponent<SpriteSwitcher>().ChangeSprite("drowning");
+            newCatInSea.GetComponent<SpriteSwitcher>().ChangeSprite("drowning");
         }
     }
 
@@ -33,7 +33,7 @@ public class NewObjectInSea : MonoBehaviour
             GameObject catOutOfSea = collision.gameObject;
             catOutOfSea.GetComponent<Rigidbody2D>().gravityScale = 1f;
             objectsInSea.RemoveCatFromSea(catOutOfSea);
-            //catOutOfSea.GetComponent<SpriteSwitcher>().ChangeSprite("default");
+            catOutOfSea.GetComponent<SpriteSwitcher>().ChangeSprite("default");
         }
     }
 

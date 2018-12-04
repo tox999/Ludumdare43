@@ -46,30 +46,30 @@ public class MouseActions : MonoBehaviour {
         AttachedObject = attachedObject;
         tongue.SetActive(true);
         mimics.ChangeFace("lick");
-        //this.AttachedObject.GetComponent<SpriteSwitcher>().ChangeSprite("falling");
+        this.AttachedObject.GetComponent<SpriteSwitcher>().ChangeSprite("falling");
     }
 
     public void Drop()
     {
 
         // start some effect
-        Debug.Log("DropFromHand");
+        //Debug.Log("DropFromHand");
         AttachedObject = null;
         tongue.SetActive(false);
         mimics.ChangeFaceToCurrent();
     }
 
-    /*
+
     public void AttachedEaten(GameObject attachedObject)
     {
-        if (this.attachedObject == attachedObject)
+        if (this.AttachedObject == attachedObject)
         {
-            this.attachedObject = null;
+            this.AttachedObject = null;
             tongue.SetActive(false);
             mimics.ChangeFace("default");
         }
     }
-    */
+
 
 
     //not used

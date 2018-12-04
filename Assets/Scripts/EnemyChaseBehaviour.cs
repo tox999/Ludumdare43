@@ -13,11 +13,14 @@ public class EnemyChaseBehaviour : MonoBehaviour
     private ObjectsInSea objectsInSea;
     private float circleCastRadius = 3.0f;
     GameObject nearestCat;
+    [SerializeField]
+    SpriteSwitcher sswitcher;
 
     private void Awake()
     {
         nearestCat = new GameObject();
         objectsInSea = FindObjectOfType<ObjectsInSea>();
+        //sswitcher = GetComponent<SpriteSwitcher>();
     }
 
     private void OnEnable()
@@ -70,6 +73,9 @@ public class EnemyChaseBehaviour : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
             transform.right = currentTarget - transform.position;
+
+            if(sswitcher.CurrentSpriteName != "default")
+                sswitcher.ChangeSprite("default");
         }
     }
 

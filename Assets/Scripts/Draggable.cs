@@ -17,7 +17,7 @@ public class Draggable : MonoBehaviour {
         // Not the best solution, upgrade if possible
         mouseActions = FindObjectOfType<MouseActions>();
         mousePosition = Vector3.zero;
-        //sswitcher = gameObject.GetComponent<SpriteSwitcher>();
+        sswitcher = gameObject.GetComponent<SpriteSwitcher>();
     }
 
 
@@ -27,10 +27,10 @@ public class Draggable : MonoBehaviour {
         mousePosition.z = 0;
     }
 
-    /*
+
     private void OnMouseUpAsButton()
     {
-        mouseActions.Drop(gameObject);
+        mouseActions.Drop();
         sswitcher.ChangeSprite("falling");
     }
 
@@ -40,14 +40,8 @@ public class Draggable : MonoBehaviour {
         {
             sswitcher.ChangeSprite("holded");
         }
-    }
-    */
-
-    private void OnMouseDown()
-    {
         isAttached = true;
     }
-
 
     private void OnMouseDrag()
     {

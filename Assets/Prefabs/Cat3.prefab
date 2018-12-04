@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NamedSprites: {fileID: 11400000, guid: dbbe925af3a45064ba32942b856d76fb, type: 2}
-  CurrentSprite: default
+  CurrentSpriteName: default
 --- !u!114 &114445947265547284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseActions: {fileID: 0}
+  isAttached: 0
 --- !u!114 &114853914542604040
 MonoBehaviour:
   m_ObjectHideFlags: 1

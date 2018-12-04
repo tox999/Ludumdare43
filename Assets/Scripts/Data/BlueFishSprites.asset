@@ -8,7 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: da043875107090c44b1dba596ccbd354, type: 3}
   m_Name: BlueFishSprites
   m_EditorClassIdentifier: Assembly-CSharp::SpriteDict
   NamedSprites:
@@ -16,6 +16,8 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: b11c8f66c3095c74b9a246fd47378923, type: 3}
   - Name: attack
     Sprite: {fileID: 21300000, guid: 51761fff106d2e442a2692f62383ed41, type: 3}
+  - Name: bite
+    Sprite: {fileID: 21300000, guid: 7fe273c2a3471824781c369490374c91, type: 3}
   - Name: get_hit
     Sprite: {fileID: 21300000, guid: a9181ee6b191c0947876fbbe85ecbd5a, type: 3}
   - Name: dead

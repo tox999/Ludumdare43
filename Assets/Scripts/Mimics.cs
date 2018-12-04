@@ -6,7 +6,7 @@ using UnityEngine;
 public class Mimics : MonoBehaviour {
 
     [SerializeField]
-    //SpriteDict Faces;
+    SpriteDict Faces;
 
     public string CurrentFace = "default";
     SpriteRenderer spriteRenderer;
@@ -18,7 +18,7 @@ public class Mimics : MonoBehaviour {
 
     public void ChangeFace(string newFace)
     {
-        /*
+
         var newSprite = Faces.GetSprite(newFace);
         if (newSprite == null)
         {
@@ -27,11 +27,11 @@ public class Mimics : MonoBehaviour {
         }
         CurrentFace = newFace;
         spriteRenderer.sprite = newSprite;
-        */
+
     }
 
     public void ChangeFaceToCurrent()
-    {/*
+    {
         var newSprite = Faces.GetSprite(CurrentFace);
         if (newSprite == null)
         {
@@ -39,11 +39,11 @@ public class Mimics : MonoBehaviour {
             return;
         }
         spriteRenderer.sprite = newSprite;
-        */
+
     }
 
     public void ChangeCurrentFace(string newFace)
-    {/*
+    {
         string previousFace = CurrentFace;
         CurrentFace = newFace;
         var newSprite = Faces.GetSprite(newFace);
@@ -56,6 +56,6 @@ public class Mimics : MonoBehaviour {
         {
             spriteRenderer.sprite = newSprite;
         }
-        */
+
     }
 }

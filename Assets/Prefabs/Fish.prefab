@@ -123,6 +123,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 65536
   chaseDistanceLimit: 0.1
+  sswitcher: {fileID: 114876028509429024}
 --- !u!114 &114876028509429024
 MonoBehaviour:
   m_ObjectHideFlags: 1

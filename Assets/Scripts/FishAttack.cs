@@ -20,15 +20,15 @@ public class FishAttack : MonoBehaviour {
 
     bool isAttacking = false;
 
-    //SpriteSwitcher sswitcher;
-    
+    SpriteSwitcher sswitcher;
+
     private void Awake()
     {
         objectsInSea = FindObjectOfType<ObjectsInSea>();
         island = FindObjectOfType<Island>();
         currentHP = fishStats.HP;
         mouseActionsScript = FindObjectOfType<Game>().GetComponent<MouseActions>();
-        //sswitcher = GetComponent<SpriteSwitcher>();
+        sswitcher = GetComponent<SpriteSwitcher>();
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -61,7 +61,7 @@ public class FishAttack : MonoBehaviour {
             
     IEnumerator AttackCat()
     {
-        //sswitcher.ChangeSprite("attack");
+        sswitcher.ChangeSprite("attack");
         if (attactedObject != null)
         {
             CatAttack cat = attactedObject.GetComponent<CatAttack>();
@@ -79,12 +79,11 @@ public class FishAttack : MonoBehaviour {
         }
         yield return new WaitForSeconds(fishStats.attackSpeedMin);
         isAttacking = false;
-        //sswitcher.ChangeSprite("default");
     }
 
     IEnumerator AttackIsland()
     {
-        //sswitcher.ChangeSprite("attack");
+        sswitcher.ChangeSprite("attack");
         if (attactedObject != null)
         {
             island.currentHP -= fishStats.damage;
@@ -97,7 +96,7 @@ public class FishAttack : MonoBehaviour {
         }
         yield return new WaitForSeconds(fishStats.attackSpeedMin);
         isAttacking = false;
-        //sswitcher.ChangeSprite("default");
+
     }
     
 

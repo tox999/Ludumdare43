@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd8ba1b04331f345a13dd482546473e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   legsLayerMask:
     serializedVersion: 2
     m_Bits: 65536
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NamedSprites: {fileID: 11400000, guid: 0aaec17b89e3a6844a71849562c95306, type: 2}
-  CurrentSprite: default
+  CurrentSpriteName: default
 --- !u!212 &212441137419004404
 SpriteRenderer:
   m_ObjectHideFlags: 1

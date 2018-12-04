@@ -17,7 +17,7 @@ public class Draggable : MonoBehaviour {
         // Not the best solution, upgrade if possible
         mouseActions = FindObjectOfType<MouseActions>();
         mousePosition = Vector3.zero;
-        sswitcher = gameObject.GetComponent<SpriteSwitcher>();
+        //sswitcher = gameObject.GetComponent<SpriteSwitcher>();
     }
 
 

@@ -9,13 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4800aba411b76ca418e0df4bc74a563b, type: 3}
-  m_Name: FishStats
+  m_Name: Fish01Stats
   m_EditorClassIdentifier: 
-  HP: 50
-  damage: 5
+  HP: 85
+  damage: 30
+  heal: 0
   attackSpeedMin: 1
-  attackSpeedMax: 2
+  attackSpeedMax: 1
   attackRange: 0
-  mass: 0
   projectileSpeedMin: 0
   projectileSpeedMax: 0
+  weight: 0
+  maxWeight: 0

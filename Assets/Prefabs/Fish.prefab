@@ -54,7 +54,7 @@ Transform:
   m_GameObject: {fileID: 1068369438531014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 1}
   m_Children: []
   m_Father: {fileID: 4124015889450584}
   m_RootOrder: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813b4eceff8918f49b5091cc70a82911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishStats: {fileID: 11400000, guid: 87b1fca7e1df6b6438385fe89ec2f1ea, type: 2}
+  fishStats: {fileID: 11400000, guid: a27d73a63740ac14d97553e6d2d62af6, type: 2}
   fishDamageParticle: {fileID: 1768167093932044, guid: 09614fcbcf78c384fb44be58574d42f3,
     type: 2}
   fishDeathParticle: {fileID: 1615750191790086, guid: e86cd4bb52cf9c74a91217def65a1fec,
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd8ba1b04331f345a13dd482546473e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 1.1
   legsLayerMask:
     serializedVersion: 2
     m_Bits: 65536
